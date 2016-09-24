@@ -1,0 +1,9 @@
+﻿create or replace view teste as select ds_cargo, no_cand from despesa_candidato2002 where no_cand ='LUIZ INACIO LULA DA SILVA';
+
+select * from teste;
+
+update despesa_comite2002 set vr_despesa = replace(vr_despesa, ',','.');
+  
+ALTER TABLE despesa_comite2002 ALTER COLUMN vr_despesa TYPE double precision USING vr_despesa::double precision;
+
+delete from despesa_comite2002 where sg_uf = 'SG_UF'

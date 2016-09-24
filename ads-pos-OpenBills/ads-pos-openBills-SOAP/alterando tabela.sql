@@ -1,0 +1,1 @@
+﻿ALTER TABLE despesa_comite2004  RENAME COLUMN SG_UE_SUP TO SG_UF;
