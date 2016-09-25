@@ -7,10 +7,13 @@ package ads.pos.openBill.SOAP.entidades;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.ColumnResult;
+import javax.persistence.ConstructorResult;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SqlResultSetMapping;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -18,6 +21,16 @@ import javax.persistence.TemporalType;
  *
  * @author Luciana
  */
+
+@SqlResultSetMapping(
+        name = "DespesaComite",
+        classes = @ConstructorResult(
+                targetClass = MediaComite.class,
+                columns = {
+                    @ColumnResult(name = "nome_estado", type = String.class),
+                    @ColumnResult(name = "mediaDespesaComite", type = Double.class)
+                    
+                }))
 @Entity
 public class DespesaComite implements Serializable {
 
