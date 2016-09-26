@@ -2,4 +2,8 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://localhost:8080/ads-pos-openBills-SOAP/ServerService?wsdl" uri="wsdl/localhost_8080/ads-pos-openBills-SOAP/ServerService.wsdl"/>
     <system systemId="http://localhost:8080/ads-pos-openBills-SOAP/ServerService?xsd=1" uri="wsdl/localhost_8080/ads-pos-openBills-SOAP/ServerService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ads-pos-openBills-SOAP/ServerComiteService?WSDL" uri="wsdl/localhost_8080/ads-pos-openBills-SOAP/ServerComiteService.wsdl"/>
+    <system systemId="http://localhost:8080/ads-pos-openBills-SOAP/ServerComiteService?xsd=1" uri="wsdl/localhost_8080/ads-pos-openBills-SOAP/ServerComiteService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ads-pos-openBills-SOAP/ServerCandidatoService?WSDL" uri="wsdl/localhost_8080/ads-pos-openBills-SOAP/ServerCandidatoService.wsdl"/>
+    <system systemId="http://localhost:8080/ads-pos-openBills-SOAP/ServerCandidatoService?xsd=1" uri="wsdl/localhost_8080/ads-pos-openBills-SOAP/ServerCandidatoService.xsd_1.xsd"/>
 </catalog>

@@ -16,6 +16,12 @@
     
     <dependencies>
         <dependency>
+            <groupId>ifpb.dac.stateless</groupId>
+            <artifactId>ads-pos-openBills-Web</artifactId>
+            <version>1.0-SNAPSHOTmensage-beans</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>
@@ -109,6 +115,42 @@
                             <staleFile>${project.build.directory}/jaxws/stale/ServerService.stale</staleFile>
                         </configuration>
                         <id>wsimport-generate-ServerService</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>localhost_8080/ads-pos-openBills-SOAP/ServerComiteService.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName>pos.openbills</packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>http://localhost:8080/ads-pos-openBills-SOAP/ServerComiteService?WSDL</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/ServerComiteService.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-ServerComiteService</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>localhost_8080/ads-pos-openBills-SOAP/ServerCandidatoService.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName>pos.openbills</packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>http://localhost:8080/ads-pos-openBills-SOAP/ServerCandidatoService?WSDL</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/ServerCandidatoService.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-ServerCandidatoService</id>
                         <phase>generate-sources</phase>
                     </execution>
                 </executions>

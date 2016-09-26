@@ -24,13 +24,13 @@ import javax.persistence.TemporalType;
  * @author Luciana
  */
 @SqlResultSetMapping(
-        name = "DespesaCandidato",
+        name = "DespesaCandidato1",
         classes = @ConstructorResult(
-                targetClass = QuantidadeDespesaCandidato.class,
+                targetClass = QuantidadeDespesaCandidatoSoma.class,
                 columns = {
-//                    @ColumnResult(name = "estado", type = String.class),
-//                    @ColumnResult(name = "soma", type = Double.class),
-                    @ColumnResult(name = "sigla_partido", type = String.class),
+                    @ColumnResult(name = "estado", type = String.class),
+                    @ColumnResult(name = "soma", type = Double.class),
+//                    @ColumnResult(name = "sigla_partido", type = String.class),
 //                    @ColumnResult(name = "nome", type = String.class),
 //                    @ColumnResult(name = "cargo", type = String.class),
 //                    @ColumnResult(name = "valorDespesa", type = Double.class)
@@ -39,7 +39,7 @@ import javax.persistence.TemporalType;
 
 
 @Entity
-public class DespesaCandidato implements Serializable {
+public class DespesaCandidato1 implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -59,10 +59,10 @@ public class DespesaCandidato implements Serializable {
     private String VR_DESPESA;
     private String DS_TITULO;
 
-    public DespesaCandidato() {
+    public DespesaCandidato1() {
     }
 
-    public DespesaCandidato(String SG_UF, String SG_PART, String DS_CARGO, String NO_CAND, int NR_CAND, Date DT_DESPESA, String CD_CPF_CNPJ_FORNECEDOR, String NO_FOR, String VR_DESPESA, String DS_TITULO) {
+    public DespesaCandidato1(String SG_UF, String SG_PART, String DS_CARGO, String NO_CAND, int NR_CAND, Date DT_DESPESA, String CD_CPF_CNPJ_FORNECEDOR, String NO_FOR, String VR_DESPESA, String DS_TITULO) {
         this.SG_UF = SG_UF;
         this.SG_PART = SG_PART;
         this.DS_CARGO = DS_CARGO;

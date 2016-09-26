@@ -6,6 +6,7 @@
 package ads.pos.openBill.SOAP.server;
 
 import ads.pos.openBill.SOAP.entidades.QuantidadeDespesaCandidato;
+import ads.pos.openBill.SOAP.entidades.QuantidadeDespesaCandidatoSoma;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.jws.WebMethod;
@@ -23,7 +24,7 @@ public class ServerCandidato {
     ServerDespesaCandidato serverSoap;
 
     @WebMethod
-    public List<QuantidadeDespesaCandidato> despesas(@WebParam(name = "ano") int ano) {
+    public List<QuantidadeDespesaCandidatoSoma> despesas(@WebParam(name = "ano") int ano) {
         return serverSoap.somaDespesasEstadoCandidato(ano);
 
     }

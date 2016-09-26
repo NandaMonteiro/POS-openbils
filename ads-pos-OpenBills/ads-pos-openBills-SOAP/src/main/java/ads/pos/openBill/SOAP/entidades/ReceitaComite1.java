@@ -24,18 +24,18 @@ import javax.persistence.TemporalType;
  * @author Luciana
  */
 @SqlResultSetMapping(
-        name = "ReceitaComite",
+        name = "ReceitaComite1",
         classes = @ConstructorResult(
-                targetClass = ReceitaComiteValor.class,
+                targetClass = ReceitaComiteValorOrgaos.class,
                 columns = {
                     @ColumnResult(name = "nome_comite", type = String.class),
                     @ColumnResult(name = "valor_receita", type = Double.class),
-//                    @ColumnResult(name = "quantidade_orgaos", type = Double.class)
+                    @ColumnResult(name = "quantidade_orgaos", type = Double.class)
                     
                 }))
 
 @Entity
-public class ReceitaComite implements Serializable {
+public class ReceitaComite1 implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -52,10 +52,10 @@ public class ReceitaComite implements Serializable {
     @Enumerated(EnumType.STRING)
     private TipoDeRecursoENUM TP_RECURSO;
 
-    public ReceitaComite() {
+    public ReceitaComite1() {
     }
 
-    public ReceitaComite(String SG_UF, String SG_PART, String DS_ORGAO, Date DT_RECEITA, String CD_CPF_CGC_DOA, String NO_DOADOR, float VR_RECEITA, TipoDeRecursoENUM TP_RECURSO) {
+    public ReceitaComite1(String SG_UF, String SG_PART, String DS_ORGAO, Date DT_RECEITA, String CD_CPF_CGC_DOA, String NO_DOADOR, float VR_RECEITA, TipoDeRecursoENUM TP_RECURSO) {
         this.SG_UF = SG_UF;
         this.SG_PART = SG_PART;
         this.DS_ORGAO = DS_ORGAO;

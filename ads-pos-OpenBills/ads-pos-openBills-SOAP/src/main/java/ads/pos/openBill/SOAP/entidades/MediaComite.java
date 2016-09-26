@@ -13,12 +13,12 @@ import java.io.Serializable;
  */
 public class MediaComite implements Serializable{
     private String nome_estado;
-    private String mediaDespesaComite;
+    private double mediaDespesaComite;
 
     public MediaComite() {
     }
 
-    public MediaComite(String nome_estado, String media_despesa) {
+    public MediaComite(String nome_estado, double media_despesa) {
         this.nome_estado = nome_estado;
         this.mediaDespesaComite = media_despesa;
     }
@@ -31,11 +31,11 @@ public class MediaComite implements Serializable{
         this.nome_estado = nome_estado;
     }
 
-    public String getMedia_despesa() {
+    public double getMedia_despesa() {
         return mediaDespesaComite;
     }
 
-    public void setMedia_despesa(String media_despesa) {
+    public void setMedia_despesa(double media_despesa) {
         this.mediaDespesaComite = media_despesa;
     }
 

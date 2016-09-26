@@ -7,6 +7,7 @@ package ads.pos.openBill.SOAP.server;
 
 import ads.pos.openBill.SOAP.entidades.QuantidadeDespesaCandidato;
 import ads.pos.openBill.SOAP.entidades.ReceitaComiteValor;
+import ads.pos.openBill.SOAP.entidades.ReceitaComiteValorOrgaos;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -24,26 +25,27 @@ public class ServerReceitaComite {
     private EntityManager entityManager;
 
     public List<ReceitaComiteValor> valorReceita(int ano) {
+        String sql;
 
         switch (ano) {
             case 2002:
-                String sql2002 = "select r.ds_orgao as nome_comite, SUM(r.vr_receita) as valor_receita from"
+                sql = "select r.ds_orgao as nome_comite, SUM(r.vr_receita) as valor_receita from "
                         + "receitas_comite2008 r group by r.ds_orgao";
 
                 break;
 
             case 2004:
-                String sql2004 = "select r.ds_orgao as nome_comite, SUM(r.vr_receita) as valor_receita from"
+                sql = "select r.ds_orgao as nome_comite, SUM(r.vr_receita) as valor_receita from "
                         + "receitas_comite2008 r group by r.ds_orgao";
 
                 break;
             case 2006:
-                String sql2006 = "select r.ds_orgao as nome_comite, SUM(r.vr_receita) as valor_receita from"
+                sql = "select r.ds_orgao as nome_comite, SUM(r.vr_receita) as valor_receita from "
                         + "receitas_comite2008 r group by r.ds_orgao";
                 break;
 
             case 2008:
-                String sql2008 = "select r.ds_orgao as nome_comite, SUM(r.vr_receita) as valor_receita from"
+                sql = "select r.ds_orgao as nome_comite, SUM(r.vr_receita) as valor_receita from "
                         + "receitas_comite2008 r group by r.ds_orgao";
 
                 break;
@@ -51,45 +53,46 @@ public class ServerReceitaComite {
             default:
                 return null;
         }
-        String sql2002 = "";
-        String sql2004 = "";
-        String sql2006 = "";
-        String sql2008 = "";
+//        String sql2002 = "";
+//        String sql2004 = "";
+//        String sql2006 = "";
+//        String sql2008 = "";
 
         Query query
-                = entityManager.createNativeQuery(sql2002, "ReceitaComite");
-        entityManager.createNativeQuery(sql2004, "ReceitaComite");
-        entityManager.createNativeQuery(sql2006, "ReceitaComite");
-        entityManager.createNativeQuery(sql2008, "ReceitaComite");
+                = entityManager.createNativeQuery(sql, "ReceitaComite");
+//        entityManager.createNativeQuery(sql2004, "ReceitaComite");
+//        entityManager.createNativeQuery(sql2006, "ReceitaComite");
+//        entityManager.createNativeQuery(sql2008, "ReceitaComite");
 
         return query.getResultList();
 
     }
 
-    public List<ReceitaComiteValor> orgaosComiteEstado(int ano) {
+    public List<ReceitaComiteValorOrgaos> orgaosComiteEstado(int ano) {
+        String sql;
 
         switch (ano) {
             case 2002:
-                String sql2002 = "select d.sg_uf as estado, COUNT(distinct d.ds_orgao) as quantidade_orgaos, SUM(vr_receita) as valor_receita_estado\n"
-                        + "from receitas_comite2002 d\n"
-                        + "group by d.sg_uf";
+                sql = "select d.sg_uf as estado, COUNT(distinct d.ds_orgao) as quantidade_orgaos, SUM(vr_receita) as valor_receita_estado\n"
+                        + " from receitas_comite2002 d\n"
+                        + " group by d.sg_uf";
 
                 break;
 
             case 2004:
-                String sql2004 = "select d.sg_uf as estado, COUNT(distinct d.ds_orgao) as quantidade_orgaos, SUM(vr_receita) as valor_receita_estado\n"
-                        + "from receitas_comite2004 d\n"
-                        + "group by d.sg_uf";
+                sql = "select d.sg_uf as estado, COUNT(distinct d.ds_orgao) as quantidade_orgaos, SUM(vr_receita) as valor_receita_estado\n"
+                        + " from receitas_comite2004 d\n"
+                        + " group by d.sg_uf";
 
                 break;
             case 2006:
-                String sql2006 = "select d.sg_ue as estado, COUNT(distinct d.ds_orgao) as quantidade_orgaos, SUM(vr_receita) as valor_receita_estado\n"
-                        + "from receitas_comite2006 d\n"
-                        + "group by d.sg_ue";
+                sql = "select d.sg_ue as estado, COUNT(distinct d.ds_orgao) as quantidade_orgaos, SUM(vr_receita) as valor_receita_estado\n"
+                        + " from receitas_comite2006 d\n"
+                        + " group by d.sg_ue";
                 break;
 
             case 2008:
-                String sql2008 = "select d.sg_ue_superior as estado, COUNT(distinct d.ds_orgao) as quantidade_orgaos, SUM(vr_receita) as valor_receita_estado\n"
+                sql = "select d.sg_ue_superior as estado, COUNT(distinct d.ds_orgao) as quantidade_orgaos, SUM(vr_receita) as valor_receita_estado\n"
                         + "from receitas_comite2008 d\n"
                         + "group by d.sg_ue_superior";
 
@@ -98,16 +101,16 @@ public class ServerReceitaComite {
             default:
                 return null;
         }
-        String sql2002 = "";
-        String sql2004 = "";
-        String sql2006 = "";
-        String sql2008 = "";
+//        String sql2002 = "";
+//        String sql2004 = "";
+//        String sql2006 = "";
+//        String sql2008 = "";
 
         Query query
-                = entityManager.createNativeQuery(sql2002, "ReceitaComite");
-        entityManager.createNativeQuery(sql2004, "ReceitaComite");
-        entityManager.createNativeQuery(sql2006, "ReceitaComite");
-        entityManager.createNativeQuery(sql2008, "ReceitaComite");
+                = entityManager.createNativeQuery(sql, "ReceitaComite1");
+//        entityManager.createNativeQuery(sql2004, "ReceitaComite");
+//        entityManager.createNativeQuery(sql2006, "ReceitaComite");
+//        entityManager.createNativeQuery(sql2008, "ReceitaComite");
 
         return query.getResultList();
     }

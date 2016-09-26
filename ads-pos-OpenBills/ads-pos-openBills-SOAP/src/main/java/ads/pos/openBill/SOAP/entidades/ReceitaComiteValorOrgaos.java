@@ -11,19 +11,19 @@ import java.io.Serializable;
  *
  * @author Luciana
  */
-public class ReceitaComiteValor implements Serializable {
+public class ReceitaComiteValorOrgaos implements Serializable {
 
     private String nome_comite;
     private double valor;
-//    private double quantidade_orgaos;
+    private double quantidade_orgaos;
 
-    public ReceitaComiteValor() {
+    public ReceitaComiteValorOrgaos() {
     }
 
-    public ReceitaComiteValor(String nome_comite, double valor) {
+    public ReceitaComiteValorOrgaos(String nome_comite, double valor, double quantidade_orgaos) {
         this.nome_comite = nome_comite;
         this.valor = valor;
-//       this.quantidade_orgaos = quantidade_orgaos;
+        this.quantidade_orgaos = quantidade_orgaos;
     }
 
     public String getNome_comite() {
@@ -42,18 +42,19 @@ public class ReceitaComiteValor implements Serializable {
         this.valor = valor;
     }
 
-//    public double getQuantidade_orgaos() {
-//        return quantidade_orgaos;
-//    }
-//
-//    public void setQuantidade_orgaos(double quantidade_orgaos) {
-//        this.quantidade_orgaos = quantidade_orgaos;
-//    }
+    public double getQuantidade_orgaos() {
+        return quantidade_orgaos;
+    }
+
+    public void setQuantidade_orgaos(double quantidade_orgaos) {
+        this.quantidade_orgaos = quantidade_orgaos;
+    }
 
     @Override
     public String toString() {
-        return "ReceitaComiteValor{" + "nome_comite=" + nome_comite + ", valor=" + valor +'}';
+        return "ReceitaComiteValorOrgaos{" + "nome_comite=" + nome_comite + ", valor=" + valor + ", quantidade_orgaos=" + quantidade_orgaos + '}';
     }
+
 
     
 
