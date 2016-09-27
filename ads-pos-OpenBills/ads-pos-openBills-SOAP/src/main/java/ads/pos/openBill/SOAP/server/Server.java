@@ -5,9 +5,8 @@
  */
 package ads.pos.openBill.SOAP.server;
 
-import ads.pos.openBill.SOAP.entidades.DespesaCandidato;
 import ads.pos.openBill.SOAP.entidades.MediaEstado;
-import java.util.List;
+import java.util.Arrays;
 import javax.ejb.EJB;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -24,8 +23,9 @@ public class Server {
     ServerSoapCandidato serverSoap;
     
     @WebMethod
-    public List<MediaEstado> despesas(@WebParam (name = "ano") int ano){
-        return serverSoap.despesasCandidato(ano);
+    public MediaEstado[] despesasY(@WebParam (name = "ano") int ano){
+        return  serverSoap.despesasCandidato(ano).toArray(new MediaEstado[]{});
+        
             
     }
 }

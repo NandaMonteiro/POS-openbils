@@ -15,12 +15,7 @@
     </properties>
     
     <dependencies>
-        <dependency>
-            <groupId>ifpb.dac.stateless</groupId>
-            <artifactId>ads-pos-openBills-Web</artifactId>
-            <version>1.0-SNAPSHOTmensage-beans</version>
-            <type>war</type>
-        </dependency>
+     
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
@@ -99,7 +94,7 @@
                 <artifactId>jaxws-maven-plugin</artifactId>
                 <version>2.3</version>
                 <executions>
-                    <execution>
+<!--                    <execution>
                         <goals>
                             <goal>wsimport</goal>
                         </goals>
@@ -116,8 +111,8 @@
                         </configuration>
                         <id>wsimport-generate-ServerService</id>
                         <phase>generate-sources</phase>
-                    </execution>
-                    <execution>
+                    </execution>-->
+<!--                    <execution>
                         <goals>
                             <goal>wsimport</goal>
                         </goals>
@@ -134,8 +129,8 @@
                         </configuration>
                         <id>wsimport-generate-ServerComiteService</id>
                         <phase>generate-sources</phase>
-                    </execution>
-                    <execution>
+                    </execution>-->
+<!--                    <execution>
                         <goals>
                             <goal>wsimport</goal>
                         </goals>
@@ -152,7 +147,75 @@
                         </configuration>
                         <id>wsimport-generate-ServerCandidatoService</id>
                         <phase>generate-sources</phase>
+                    </execution>-->
+                    
+                     <execution>
+                        <id>wsimport-generate-ServerCandidatoService</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <packageName>pos.openbills</packageName>
+                            <wsdlUrls>
+                                <wsdlLocation>http://localhost:8080/ads-pos-openBills-SOAP/ServerCandidatoService?WSDL</wsdlLocation>
+                            </wsdlUrls> 
+                            <verbose>true</verbose>
+                            <sourceDestDir>${basedir}/src/main/java</sourceDestDir>
+                            <target>2.1</target>
+                            <xnocompile>true</xnocompile>                           
+                            <extension>true</extension>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                        </configuration>
+                        
                     </execution>
+                     <execution>
+                        <id>wsimport-generate-ServerComiteService</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <packageName>pos.openbills</packageName>
+                            <wsdlUrls>
+                                <wsdlLocation>http://localhost:8080/ads-pos-openBills-SOAP/ServerComiteService?WSDL</wsdlLocation>
+                            </wsdlUrls> 
+                            <verbose>true</verbose>
+                            <sourceDestDir>${basedir}/src/main/java</sourceDestDir>
+                            <target>2.1</target>
+                            <xnocompile>true</xnocompile>                           
+                            <extension>true</extension>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                        </configuration>
+                        
+                    </execution>
+                     <execution>
+                        <id>wsimport-generate-ServerService</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <packageName>pos.openbills</packageName>
+                            <wsdlUrls>
+                                <wsdlLocation>http://localhost:8080/ads-pos-openBills-SOAP/ServerService?wsdl</wsdlLocation>
+                            </wsdlUrls> 
+                            <verbose>true</verbose>
+                            <sourceDestDir>${basedir}/src/main/java</sourceDestDir>
+                            <target>2.1</target>
+                            <xnocompile>true</xnocompile>                           
+                            <extension>true</extension>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                        </configuration>
+                        
+                    </execution>
+                    
                 </executions>
                 <dependencies>
                     <dependency>
@@ -166,7 +229,7 @@
                     <xnocompile>true</xnocompile>
                     <verbose>true</verbose>
                     <extension>true</extension>
-                    <catalog>${basedir}/src/jax-ws-catalog.xml</catalog>
+                    <!--<catalog>${basedir}/src/jax-ws-catalog.xml</catalog>-->
                 </configuration>
             </plugin>
         </plugins>

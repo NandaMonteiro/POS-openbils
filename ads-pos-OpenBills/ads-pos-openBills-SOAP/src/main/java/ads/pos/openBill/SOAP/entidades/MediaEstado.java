@@ -6,11 +6,13 @@
 package ads.pos.openBill.SOAP.entidades;
 
 import java.io.Serializable;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author nanda
  */
+@XmlRootElement
 public class MediaEstado implements Serializable{
     private String estado;
     private double receita ;

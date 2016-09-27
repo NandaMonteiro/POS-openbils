@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pos.openbills;
+package pos.openbills.controlador;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -12,6 +12,9 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import com.google.gson.JsonArray;
+import pos.openbills.MediaEstado;
+import pos.openbills.Server;
+import pos.openbills.ServerService;
 /**
  *
  * @author nanda
@@ -28,7 +31,7 @@ public class Service {
     private List<MediaEstado> list(){
         ServerService serverService = new ServerService();
         Server s = serverService.getServerPort();
-        return s.despesas(2002);
+        return s.despesasY(2004);
         
     }
     
@@ -40,7 +43,7 @@ public class Service {
     
     
     @PostConstruct
-    private void init(){
+    public void init(){
         lista = list();
         array = getJsonList();
     }
