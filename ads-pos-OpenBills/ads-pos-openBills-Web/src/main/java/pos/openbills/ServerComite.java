@@ -28,13 +28,13 @@ public interface ServerComite {
      * 
      * @param ano
      * @return
-     *     returns java.util.List<pos.openbills.ReceitaComiteValor>
+     *     returns java.util.List<pos.openbills.MediaComite>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "despesas", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.Despesas")
-    @ResponseWrapper(localName = "despesasResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.DespesasResponse")
-    public List<ReceitaComiteValor> despesas(
+    @RequestWrapper(localName = "mediaDespesaComite", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.MediaDespesaComite")
+    @ResponseWrapper(localName = "mediaDespesaComiteResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.MediaDespesaComiteResponse")
+    public List<MediaComite> mediaDespesaComite(
         @WebParam(name = "ano", targetNamespace = "")
         int ano);
 
@@ -56,13 +56,13 @@ public interface ServerComite {
      * 
      * @param ano
      * @return
-     *     returns java.util.List<pos.openbills.MediaComite>
+     *     returns java.util.List<pos.openbills.QuantidadeDespesaCandidatoSoma>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "mediaDespesaComite", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.MediaDespesaComite")
-    @ResponseWrapper(localName = "mediaDespesaComiteResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.MediaDespesaComiteResponse")
-    public List<MediaComite> mediaDespesaComite(
+    @RequestWrapper(localName = "despesas", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.Despesas")
+    @ResponseWrapper(localName = "despesasResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.DespesasResponse")
+    public List<QuantidadeDespesaCandidatoSoma> despesas(
         @WebParam(name = "ano", targetNamespace = "")
         int ano);
 

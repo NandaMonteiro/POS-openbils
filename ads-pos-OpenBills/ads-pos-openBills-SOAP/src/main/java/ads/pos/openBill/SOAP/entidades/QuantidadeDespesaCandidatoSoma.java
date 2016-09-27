@@ -6,11 +6,13 @@
 package ads.pos.openBill.SOAP.entidades;
 
 import java.io.Serializable;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Luciana
  */
+@XmlRootElement
 public class QuantidadeDespesaCandidatoSoma implements Serializable{
     private String estado;
     private double soma;

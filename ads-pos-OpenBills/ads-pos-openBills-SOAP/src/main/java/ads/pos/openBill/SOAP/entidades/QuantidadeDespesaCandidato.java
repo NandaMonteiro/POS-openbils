@@ -6,11 +6,13 @@
 package ads.pos.openBill.SOAP.entidades;
 
 import java.io.Serializable;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Luciana
  */
+@XmlRootElement
 public class QuantidadeDespesaCandidato implements Serializable{
     private String sigla_partido;
 //    private double quantidade;
