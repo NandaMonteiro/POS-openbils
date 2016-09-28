@@ -9,41 +9,36 @@
     <head>
         <title>Open Bills</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        
-        <h:outputScript>
-                
-                var listaEstadoMedia;
-            
-                function populateList(lista) {
-                    listaEstadoMedia = lista;
-                     var i = 0;
-                     lista.forEach(function(e){
-                        console.log("estado: " + e.estado + " receita media: " + e.receita); 
-                     });
-                     
-                }
-                
-                populateList(#{(service.array)}  );
-        </h:outputScript>
-        
-    
     </head>
-       
+
     <body>         
-        
-        <h:dataTable value="#{service.lista}" var="o" >
-            <h:column>
-                <!-- column header -->
-                <f:facet name="header">Estado</f:facet>
-                <!-- row record -->
-                #{o.estado}
-            </h:column>
+
+        <h:form prependId="false">
             
-            <h:column>
-                <f:facet name="header">Media da receita</f:facet>
-    		#{o.receita}
-            </h:column>
-    	</h:dataTable>
-      
+            <h:selectOneMenu value="#{service.ano}" required="true">
+                <f:selectItem itemLabel="Selecione um ano" itemValue="" />
+                <f:selectItem itemLabel="2004" itemValue="2004" />
+                <f:selectItem itemLabel="2006" itemValue="2006" />
+                <f:selectItem itemLabel="2008" itemValue="2008" />
+            </h:selectOneMenu>
+            
+            <h:commandButton action="#{service.submeter()}" value="Submeter" />
+
+            <h:dataTable value="#{service.lista}" var="o" >
+                <h:column>
+                    <!-- column header -->
+                    <f:facet name="header">Estado</f:facet>
+                    <!-- row record -->
+                    #{o.estado}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Media da receita</f:facet>
+                        #{o.receita}
+                </h:column>
+            </h:dataTable>
+
+        </h:form>
+
     </body>
 </html>

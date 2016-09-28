@@ -5,13 +5,12 @@
  */
 package pos.openbills.controlador;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import java.util.List;
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import com.google.gson.JsonArray;
+import java.io.Serializable;
+import javax.enterprise.context.SessionScoped;
 import pos.openbills.MediaEstado;
 import pos.openbills.Server;
 import pos.openbills.ServerService;
@@ -21,8 +20,10 @@ import pos.openbills.ServerService;
  */
 
 @Named
-@RequestScoped
-public class Service {
+@SessionScoped
+public class Service implements Serializable {
+    
+    private int ano = 2004;
     
     private List<MediaEstado> lista;
     
@@ -31,21 +32,28 @@ public class Service {
     private List<MediaEstado> list(){
         ServerService serverService = new ServerService();
         Server s = serverService.getServerPort();
-        return s.despesasY(2004);
-        
+        return s.despesasY(this.ano);
     }
     
-    private JsonArray getJsonList(){
+    /* private JsonArray getJsonList(){
         return (JsonArray) new Gson().toJsonTree(list(),
             new TypeToken<List<MediaEstado>>() {
             }.getType());
-    }
+    } */
     
     
     @PostConstruct
     public void init(){
         lista = list();
-        array = getJsonList();
+        //array = getJsonList();
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+    public void setAno(int ano) {
+        this.ano = ano;
     }
 
     public List<MediaEstado> getLista() {
@@ -64,7 +72,10 @@ public class Service {
         this.array = array;
     }
     
-    
-    
+    public String submeter() {
+        System.out.println(">>>> " + this.ano);
+        this.lista = list();
+        return null;
+    }
     
 }
