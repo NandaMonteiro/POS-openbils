@@ -28,20 +28,6 @@ public interface ServerCandidato {
      * 
      * @param ano
      * @return
-     *     returns java.util.List<pos.openbills.QuantidadeDespesaCandidatoSoma>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "despesas", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.Despesas")
-    @ResponseWrapper(localName = "despesasResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.DespesasResponse")
-    public List<QuantidadeDespesaCandidatoSoma> despesas(
-        @WebParam(name = "ano", targetNamespace = "")
-        int ano);
-
-    /**
-     * 
-     * @param ano
-     * @return
      *     returns java.util.List<pos.openbills.QuantidadeDespesaCandidato>
      */
     @WebMethod
@@ -49,6 +35,20 @@ public interface ServerCandidato {
     @RequestWrapper(localName = "quantidade", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.Quantidade")
     @ResponseWrapper(localName = "quantidadeResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.QuantidadeResponse")
     public List<QuantidadeDespesaCandidato> quantidade(
+        @WebParam(name = "ano", targetNamespace = "")
+        int ano);
+
+    /**
+     * 
+     * @param ano
+     * @return
+     *     returns java.util.List<pos.openbills.ReceitaComiteValor>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "despesas", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.Despesas")
+    @ResponseWrapper(localName = "despesasResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.DespesasResponse")
+    public List<ReceitaComiteValor> despesas(
         @WebParam(name = "ano", targetNamespace = "")
         int ano);
 

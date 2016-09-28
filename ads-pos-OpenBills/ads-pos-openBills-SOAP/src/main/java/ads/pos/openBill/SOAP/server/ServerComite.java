@@ -7,7 +7,6 @@ package ads.pos.openBill.SOAP.server;
 
 
 import ads.pos.openBill.SOAP.entidades.MediaComite;
-import ads.pos.openBill.SOAP.entidades.QuantidadeDespesaCandidato;
 import ads.pos.openBill.SOAP.entidades.ReceitaComiteValor;
 import ads.pos.openBill.SOAP.entidades.ReceitaComiteValorOrgaos;
 import java.util.List;
@@ -27,7 +26,7 @@ public class ServerComite {
     ServerReceitaComite serverReceitaComite;
 
     @EJB
-    ServerDespesaComite serverDespesaComite;
+    ServerSoapDespesaComite serverDespesaComite;
 
     @WebMethod
     public List<ReceitaComiteValor> despesas(@WebParam(name = "ano") int ano) {

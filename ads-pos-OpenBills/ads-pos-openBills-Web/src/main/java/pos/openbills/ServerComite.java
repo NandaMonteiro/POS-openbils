@@ -42,13 +42,13 @@ public interface ServerComite {
      * 
      * @param ano
      * @return
-     *     returns java.util.List<pos.openbills.ReceitaComiteValorOrgaos>
+     *     returns java.util.List<pos.openbills.ReceitaComiteValor>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "orgaosEstado", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.OrgaosEstado")
-    @ResponseWrapper(localName = "orgaosEstadoResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.OrgaosEstadoResponse")
-    public List<ReceitaComiteValorOrgaos> orgaosEstado(
+    @RequestWrapper(localName = "despesas", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.Despesas")
+    @ResponseWrapper(localName = "despesasResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.DespesasResponse")
+    public List<ReceitaComiteValor> despesas(
         @WebParam(name = "ano", targetNamespace = "")
         int ano);
 
@@ -56,13 +56,13 @@ public interface ServerComite {
      * 
      * @param ano
      * @return
-     *     returns java.util.List<pos.openbills.QuantidadeDespesaCandidatoSoma>
+     *     returns java.util.List<pos.openbills.ReceitaComiteValorOrgaos>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "despesas", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.Despesas")
-    @ResponseWrapper(localName = "despesasResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.DespesasResponse")
-    public List<QuantidadeDespesaCandidatoSoma> despesas(
+    @RequestWrapper(localName = "orgaosEstado", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.OrgaosEstado")
+    @ResponseWrapper(localName = "orgaosEstadoResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.OrgaosEstadoResponse")
+    public List<ReceitaComiteValorOrgaos> orgaosEstado(
         @WebParam(name = "ano", targetNamespace = "")
         int ano);
 

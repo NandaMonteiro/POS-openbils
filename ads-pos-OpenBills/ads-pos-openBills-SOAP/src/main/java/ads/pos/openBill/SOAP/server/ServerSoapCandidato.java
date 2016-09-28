@@ -41,9 +41,7 @@ public class ServerSoapCandidato {
             default:;
         }
 
-        Query query
-                = entityManager.createNativeQuery(sql, "MediaEstadoMap");
-
+        Query query = entityManager.createNativeQuery(sql, "MediaEstadoMap");
         return query.getResultList();
 
     }

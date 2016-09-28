@@ -18,13 +18,14 @@ import javax.persistence.Query;
  * @author Luciana
  */
 @Stateless
-public class ServerDespesaComite {
+public class ServerSoapDespesaComite {
 
     @PersistenceContext
     private EntityManager entityManager;
 
     public List<MediaComite> mediaDespesaComite(int ano) {
-        String sql;
+        String sql = "";
+        
         switch (ano) {
 
             case 2002:
@@ -50,17 +51,8 @@ public class ServerDespesaComite {
             default:
                 return null;
         }
-//        String sql2002 = "";
-//        String sql2004 = "";
-//        String sql2006 = "";
-//        String sql2008 = "";
 
-        Query query
-                = entityManager.createNativeQuery(sql, "DespesaComite");
-//        entityManager.createNativeQuery(sql2004, "DespesaComite");
-//        entityManager.createNativeQuery(sql2006, "DespesaComite");
-//        entityManager.createNativeQuery(sql2008, "DespesaComite");
-
+        Query query = entityManager.createNativeQuery(sql, "DespesaComite");
         return query.getResultList();
 
     }

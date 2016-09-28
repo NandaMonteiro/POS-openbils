@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets" 
+    xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <head>
+        <title>Open Bills</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>         
+
+        <h:form prependId="false">
+            
+            <h:selectOneMenu value="#{serviceMediaComite.ano}" required="true">
+                <f:selectItem itemLabel="Selecione um ano" itemValue="" />
+                <f:selectItem itemLabel="2004" itemValue="2002" />
+                <f:selectItem itemLabel="2004" itemValue="2004" />
+                <f:selectItem itemLabel="2006" itemValue="2006" />
+                <f:selectItem itemLabel="2008" itemValue="2008" />
+            </h:selectOneMenu>
+            
+            <h:commandButton action="#{serviceMediaComite.submeter()}" value="Submeter" />
+
+            <h:dataTable value="#{serviceMediaComite.listaMediaComite}" var="o" >
+                <h:column>
+                    <!-- column header -->
+                    <f:facet name="header">Estado</f:facet>
+                    <!-- row record -->
+                    #{o.nomeEstado}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Media da receita</f:facet>
+                        #{o.mediaDespesa}
+                </h:column>
+            </h:dataTable>
+
+        </h:form>
+
+    </body>
+</html>
