@@ -5,10 +5,12 @@
  */
 package pos.openbills.controlador;
 
+import com.google.gson.Gson;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;
 import com.google.gson.JsonArray;
+import com.google.gson.reflect.TypeToken;
 import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
 import pos.openbills.MediaEstado;
@@ -35,17 +37,17 @@ public class Service implements Serializable {
         return s.despesasY(this.ano);
     }
     
-    /* private JsonArray getJsonList(){
+    private JsonArray getJsonList(){
         return (JsonArray) new Gson().toJsonTree(list(),
             new TypeToken<List<MediaEstado>>() {
             }.getType());
-    } */
+    }
     
     
     @PostConstruct
     public void init(){
         lista = list();
-        //array = getJsonList();
+        array = getJsonList();
     }
 
     public int getAno() {
@@ -75,6 +77,7 @@ public class Service implements Serializable {
     public String submeter() {
         System.out.println(">>>> " + this.ano);
         this.lista = list();
+        this.array = getJsonList();
         return null;
     }
     

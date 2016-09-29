@@ -5,7 +5,9 @@
  */
 package pos.openbills.controlador;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+import com.google.gson.reflect.TypeToken;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -23,9 +25,9 @@ import pos.openbills.ServerComiteService;
 @Named
 @SessionScoped
 public class ServiceMediaComite implements Serializable{
-    private int ano = 2004;    
+    private int ano = 2002;    
     private List<MediaComite> listaMediaComite;    
-    private JsonArray array;
+    private JsonArray arrayMediaComite;
     
     private List<MediaComite> listMediaComite(){
         ServerComiteService serverComiteService = new ServerComiteService();
@@ -33,10 +35,16 @@ public class ServiceMediaComite implements Serializable{
         return sc.mediaDespesaComite(this.ano);
     }
     
+    private JsonArray getJsonList() {
+        return (JsonArray) new Gson().toJsonTree(listMediaComite(),
+                new TypeToken<List<MediaComite>>() {
+                }.getType());
+    }
+    
     @PostConstruct
     public void init(){
         listaMediaComite = listMediaComite();
-        //array = getJsonList();
+        arrayMediaComite = getJsonList();
     }
 
     public int getAno() {
@@ -48,11 +56,11 @@ public class ServiceMediaComite implements Serializable{
     }
 
     public JsonArray getArray() {
-        return array;
+        return arrayMediaComite;
     }
 
     public void setArray(JsonArray array) {
-        this.array = array;
+        this.arrayMediaComite = array;
     }
 
     public List<MediaComite> getListaMediaComite() {
@@ -66,6 +74,7 @@ public class ServiceMediaComite implements Serializable{
     public String submeter() {
         //System.out.println(">>>> " + this.ano);
         this.listaMediaComite = listMediaComite();
+        this.arrayMediaComite = getJsonList();
         return null;
     }
 }

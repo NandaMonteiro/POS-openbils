@@ -18,7 +18,7 @@ import javax.persistence.Query;
  * @author Luciana
  */
 @Stateless
-public class ServerDespesaCandidato {
+public class ServerSoapDespesaCandidato {
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -52,22 +52,13 @@ public class ServerDespesaCandidato {
             default:
                 return null;
         }
-//        String sql2002 = "";
-//        String sql2004 = "";
-//        String sql2006 = "";
-//        String sql2008 = "";
 
-        Query query
-                = //= entityManager.createNativeQuery(sql2002, "ValorDespesaCandidato");
-                entityManager.createNativeQuery(sql, "DespesaCandidato1");
-//        entityManager.createNativeQuery(sql2006, "DespesaCandidato");
-//        entityManager.createNativeQuery(sql2008, "DespesaCandidato");
-
+        Query query = entityManager.createNativeQuery(sql, "DespesaCandidato1");
         return query.getResultList();
 
     }
 
-    public List<QuantidadeDespesaCandidato> quantidaCandidato(int ano) {
+    public List<QuantidadeDespesaCandidato> quantidadeCandidato(int ano) {
         String sql;
 
         switch (ano) {
@@ -97,22 +88,13 @@ public class ServerDespesaCandidato {
             default:
                 return null;
         }
-//        String sql2002 = "";
-//        String sql2004 = "";
-//        String sql2006 = "";
-//        String sql2008 = "";
 
-        Query query
-                = entityManager.createNativeQuery(sql, "DespesaCandidato");
-//        entityManager.createNativeQuery(sql2004, "DespesaCandidato");
-//        entityManager.createNativeQuery(sql2006, "DespesaCandidato");
-//        entityManager.createNativeQuery(sql2008, "DespesaCandidato");
-
+        Query query = entityManager.createNativeQuery(sql, "DespesaCandidato");
         return query.getResultList();
 
     }
 
-    public List<QuantidadeDespesaCandidato> candidatosMaisGastaram(int ano) {
+    public List<QuantidadeDespesaCandidato> candidatosMaisGastaramParaiba(int ano) {
         String sql;
 
         switch (ano) {
@@ -150,17 +132,8 @@ public class ServerDespesaCandidato {
             default:
                 return null;
         }
-//        String sql2002 = "";
-//        String sql2004 = "";
-//        String sql2006 = "";
-//        String sql2008 = "";
-
-        Query query
-                = entityManager.createNativeQuery(sql, "DespesaCandidato");
-//        entityManager.createNativeQuery(sql2004, "DespesaCandidato");
-//        entityManager.createNativeQuery(sql2006, "DespesaCandidato");
-//        entityManager.createNativeQuery(sql2008, "DespesaCandidato");
-
+        
+        Query query = entityManager.createNativeQuery(sql, "DespesaCandidato");
         return query.getResultList();
 
     }

@@ -23,9 +23,8 @@ public class Server {
     ServerSoapCandidato serverSoap;
     
     @WebMethod
-    public MediaEstado[] despesasY(@WebParam (name = "ano") int ano){
+    public MediaEstado[] despesas(@WebParam (name = "ano") int ano){
         return  serverSoap.despesasCandidato(ano).toArray(new MediaEstado[]{});
-        
-            
+                    
     }
 }

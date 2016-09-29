@@ -23,14 +23,14 @@ import javax.jws.WebService;
 public class ServerComite {
 
     @EJB
-    ServerReceitaComite serverReceitaComite;
+    ServerSoapReceitaComite serverReceitaComite;
 
     @EJB
     ServerSoapDespesaComite serverDespesaComite;
 
     @WebMethod
     public List<ReceitaComiteValor> despesas(@WebParam(name = "ano") int ano) {
-        return serverReceitaComite.valorReceita(ano);
+        return serverReceitaComite.valorReceitaPorComite(ano);
 
     }
 
