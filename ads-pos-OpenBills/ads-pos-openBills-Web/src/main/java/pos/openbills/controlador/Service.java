@@ -16,6 +16,7 @@ import javax.enterprise.context.SessionScoped;
 import pos.openbills.MediaEstado;
 import pos.openbills.Server;
 import pos.openbills.ServerService;
+
 /**
  *
  * @author nanda
@@ -24,28 +25,27 @@ import pos.openbills.ServerService;
 @Named
 @SessionScoped
 public class Service implements Serializable {
-    
+
     private int ano = 2004;
-    
+
     private List<MediaEstado> lista;
-    
+
     private JsonArray array;
-    
-    private List<MediaEstado> list(){
+
+    private List<MediaEstado> list() {
         ServerService serverService = new ServerService();
         Server s = serverService.getServerPort();
-        return s.despesasY(this.ano);
+        return s.despesas(this.ano);
     }
-    
-    private JsonArray getJsonList(){
+
+    private JsonArray getJsonList() {
         return (JsonArray) new Gson().toJsonTree(list(),
-            new TypeToken<List<MediaEstado>>() {
-            }.getType());
+                new TypeToken<List<MediaEstado>>() {
+                }.getType());
     }
-    
-    
+
     @PostConstruct
-    public void init(){
+    public void init() {
         lista = list();
         array = getJsonList();
     }
@@ -73,12 +73,14 @@ public class Service implements Serializable {
     public void setArray(JsonArray array) {
         this.array = array;
     }
-    
+
     public String submeter() {
-        System.out.println(">>>> " + this.ano);
+        //System.out.println(">>>> " + this.ano);
         this.lista = list();
         this.array = getJsonList();
         return null;
     }
+
+    
     
 }

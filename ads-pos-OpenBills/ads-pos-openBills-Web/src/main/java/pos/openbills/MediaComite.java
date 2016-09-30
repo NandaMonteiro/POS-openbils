@@ -3,7 +3,6 @@ package pos.openbills;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -17,8 +16,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="media_despesa" type="{http://www.w3.org/2001/XMLSchema}double"/>
- *         &lt;element name="nome_estado" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="mediaDespesaComite" type="{http://www.w3.org/2001/XMLSchema}double"/>
+ *         &lt;element name="nomeEstado" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,30 +28,28 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "mediaComite", propOrder = {
-    "mediaDespesa",
+    "mediaDespesaComite",
     "nomeEstado"
 })
 public class MediaComite {
 
-    @XmlElement(name = "media_despesa")
-    protected double mediaDespesa;
-    @XmlElement(name = "nome_estado")
+    protected double mediaDespesaComite;
     protected String nomeEstado;
 
     /**
-     * Obtém o valor da propriedade mediaDespesa.
+     * Obtém o valor da propriedade mediaDespesaComite.
      * 
      */
-    public double getMediaDespesa() {
-        return mediaDespesa;
+    public double getMediaDespesaComite() {
+        return mediaDespesaComite;
     }
 
     /**
-     * Define o valor da propriedade mediaDespesa.
+     * Define o valor da propriedade mediaDespesaComite.
      * 
      */
-    public void setMediaDespesa(double value) {
-        this.mediaDespesa = value;
+    public void setMediaDespesaComite(double value) {
+        this.mediaDespesaComite = value;
     }
 
     /**

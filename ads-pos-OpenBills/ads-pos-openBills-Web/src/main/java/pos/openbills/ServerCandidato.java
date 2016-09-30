@@ -28,13 +28,13 @@ public interface ServerCandidato {
      * 
      * @param ano
      * @return
-     *     returns java.util.List<pos.openbills.QuantidadeDespesaCandidato>
+     *     returns java.util.List<pos.openbills.MediaEstado>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "quantidade", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.Quantidade")
-    @ResponseWrapper(localName = "quantidadeResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.QuantidadeResponse")
-    public List<QuantidadeDespesaCandidato> quantidade(
+    @RequestWrapper(localName = "despesas", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.Despesas")
+    @ResponseWrapper(localName = "despesasResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.DespesasResponse")
+    public List<MediaEstado> despesas(
         @WebParam(name = "ano", targetNamespace = "")
         int ano);
 
@@ -42,13 +42,13 @@ public interface ServerCandidato {
      * 
      * @param ano
      * @return
-     *     returns java.util.List<pos.openbills.ReceitaComiteValor>
+     *     returns java.util.List<pos.openbills.QuantidadeDespesaCandidato>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "despesas", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.Despesas")
-    @ResponseWrapper(localName = "despesasResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.DespesasResponse")
-    public List<ReceitaComiteValor> despesas(
+    @RequestWrapper(localName = "quantidade", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.Quantidade")
+    @ResponseWrapper(localName = "quantidadeResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.QuantidadeResponse")
+    public List<QuantidadeDespesaCandidato> quantidade(
         @WebParam(name = "ano", targetNamespace = "")
         int ano);
 

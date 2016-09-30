@@ -19,29 +19,29 @@ import javax.persistence.Query;
  * @author Luciana
  */
 @Stateless
-public class ServerSoapReceitaComite {
+public class ServerReceitaComite {
 
     @PersistenceContext
     private EntityManager entityManager;
 
-    public List<ReceitaComiteValor> valorReceitaPorComite(int ano) {
+    public List<ReceitaComiteValor> valorReceita(int ano) {
         String sql;
 
         switch (ano) {
             case 2002:
                 sql = "select r.ds_orgao as nome_comite, SUM(r.vr_receita) as valor_receita from "
-                        + "receitas_comite2002 r group by r.ds_orgao";
+                        + "receitas_comite2008 r group by r.ds_orgao";
 
                 break;
 
             case 2004:
                 sql = "select r.ds_orgao as nome_comite, SUM(r.vr_receita) as valor_receita from "
-                        + "receitas_comite2004 r group by r.ds_orgao";
+                        + "receitas_comite2008 r group by r.ds_orgao";
 
                 break;
             case 2006:
                 sql = "select r.ds_orgao as nome_comite, SUM(r.vr_receita) as valor_receita from "
-                        + "receitas_comite2006 r group by r.ds_orgao";
+                        + "receitas_comite2008 r group by r.ds_orgao";
                 break;
 
             case 2008:
@@ -53,8 +53,17 @@ public class ServerSoapReceitaComite {
             default:
                 return null;
         }
+//        String sql2002 = "";
+//        String sql2004 = "";
+//        String sql2006 = "";
+//        String sql2008 = "";
 
-        Query query = entityManager.createNativeQuery(sql, "ReceitaComite");
+        Query query
+                = entityManager.createNativeQuery(sql, "ReceitaComite");
+//        entityManager.createNativeQuery(sql2004, "ReceitaComite");
+//        entityManager.createNativeQuery(sql2006, "ReceitaComite");
+//        entityManager.createNativeQuery(sql2008, "ReceitaComite");
+
         return query.getResultList();
 
     }
@@ -92,8 +101,17 @@ public class ServerSoapReceitaComite {
             default:
                 return null;
         }
+//        String sql2002 = "";
+//        String sql2004 = "";
+//        String sql2006 = "";
+//        String sql2008 = "";
 
-        Query query = entityManager.createNativeQuery(sql, "ReceitaComite1");
-         return query.getResultList();
+        Query query
+                = entityManager.createNativeQuery(sql, "ReceitaComite1");
+//        entityManager.createNativeQuery(sql2004, "ReceitaComite");
+//        entityManager.createNativeQuery(sql2006, "ReceitaComite");
+//        entityManager.createNativeQuery(sql2008, "ReceitaComite");
+
+        return query.getResultList();
     }
 }

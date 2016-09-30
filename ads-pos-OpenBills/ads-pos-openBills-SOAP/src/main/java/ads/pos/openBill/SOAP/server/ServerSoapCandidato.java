@@ -28,15 +28,15 @@ public class ServerSoapCandidato {
         switch (ano) {
             case 2004:
                 sql = "select sg_uf AS estado, avg(vr_receita) as receita "
-                        + "from receitas_candidato2004 group by sg_uf";
+                        + "from receitas_candidato2004 group by sg_uf order by estado ASC";
                 break;
             case 2006:
                 sql = "select unidade_eleitoral_candidato AS estado, avg(valor_receita) as receita "
-                        + "from receitas_candidato2006 group by unidade_eleitoral_candidato";
+                        + "from receitas_candidato2006 group by unidade_eleitoral_candidato order by estado ASC";
                 break;
             case 2008:
                 sql = "select sg_ue_superior AS estado, avg(vr_receita) as receita "
-                        + "from receitas_candidato2008 group by sg_ue_superior";
+                        + "from receitas_candidato2008 group by sg_ue_superior order by estado ASC";
                 break;
             default:;
         }

@@ -27,18 +27,19 @@
 
             <h:dataTable value="#{serviceMediaComite.listaMediaComite}" var="o" >
                 <h:column>
-                    <!-- column header -->
                     <f:facet name="header">Estado</f:facet>
-                    <!-- row record -->
-                    #{o.nomeEstado}
+                        #{o.nomeEstado}
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">Media da receita</f:facet>
-                        #{o.mediaDespesa}
+                        #{o.mediaDespesaComite}
                 </h:column>
             </h:dataTable>
 
+            
+            #{serviceMediaComite.array}
+            
         </h:form>
 
     </body>

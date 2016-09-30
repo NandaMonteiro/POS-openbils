@@ -14,78 +14,96 @@
         <style type="text/css">
         </style>
         <script type="text/javascript">
-
+            //<![CDATA[ 
 
             var array = #{(service.array)}
-            var serieList = []a
+            var serieList = []
             var ano = #{(service.ano)}
-            
+
             array.forEach(function (a) {
                 serieList.push({'name': a.estado,
                     'y': a.receita,
                     'drilldown': null
-                });
+                })
             });
 
 
-
-
-//            {
-//            name: 'Microsoft Internet Explorer',
-//                    y: 56.33,
-//                    drilldown: 'Microsoft Internet Explorer'
-//            }
+//            categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'],
+//            
+//            series: [{
+//                name: 'Year 1800',
+//                data: [107, 31, 635, 203, 2]
+//            }]
 
 
             $(function () {
-                // Create the chart
                 $('#container').highcharts({
                     chart: {
-                        type: 'column'
+                        type: 'bar'
                     },
                     title: {
-                        text: 'Grafico de alguma coisa do ano ' + ano
+                        text: 'Historic World Population by Region'
                     },
                     subtitle: {
-                        text: 'Click the columns to view versions. Source: <a href="http://netmarketshare.com">netmarketshare.com</a>.'
+                        text: 'Source: <a href="https://en.wikipedia.org/wiki/World_population">Wikipedia.org</a>'
                     },
                     xAxis: {
-                        type: 'category'
+                        categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'],
+                        title: {
+                            text: null
+                        }
                     },
                     yAxis: {
+                        min: 0,
                         title: {
-                            text: 'Total percent market share'
-                        }
-
-                    },
-                    legend: {
-                        enabled: false
-                    },
-                    plotOptions: {
-                        series: {
-                            borderWidth: 0,
-                            dataLabels: {
-                                enabled: true,
-                                format: '{point.y:.1f} R$'
-                            }
+                            text: 'Population (millions)',
+                            align: 'high'
+                        },
+                        labels: {
+                            overflow: 'justify'
                         }
                     },
                     tooltip: {
-                        headerFormat: '<span style="font-size:11px">{series.name}</span><br/>',
-                        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f} R$</b> of total<br/>'
+                        valueSuffix: ' millions'
+                    },
+                    plotOptions: {
+                        bar: {
+                            dataLabels: {
+                                enabled: true
+                            }
+                        }
+                    },
+                    legend: {
+                        layout: 'vertical',
+                        align: 'right',
+                        verticalAlign: 'top',
+                        x: -40,
+                        y: 80,
+                        floating: true,
+                        borderWidth: 1,
+                        backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+                        shadow: true
+                    },
+                    credits: {
+                        enabled: false
                     },
                     series: [{
-                            name: 'Brands',
-                            colorByPoint: true,
-                            data: serieList
-                        }],
+                            name: 'Year 1800',
+                            data: [107, 31, 635, 203, 2]
+                        }, {
+                            name: 'Year 1900',
+                            data: [133, 156, 947, 408, 6]
+                        }, {
+                            name: 'Year 2012',
+                            data: [1052, 954, 4250, 740, 38]
+                        }]
                 });
             });
+            //]]>
         </script>
 
         <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/modules/data.js"></script>
-        <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
     </head>
 
     <body>         
@@ -101,7 +119,7 @@
 
             <h:commandButton action="#{service.submeter()}" value="Submeter" />
 
-            <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+            <div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
 
 
 

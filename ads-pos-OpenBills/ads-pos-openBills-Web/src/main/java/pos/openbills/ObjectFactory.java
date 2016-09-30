@@ -24,9 +24,9 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _DespesasYResponse_QNAME = new QName("http://server.SOAP.openBill.pos.ads/", "despesasYResponse");
+    private final static QName _Despesas_QNAME = new QName("http://server.SOAP.openBill.pos.ads/", "despesas");
     private final static QName _MediaEstado_QNAME = new QName("http://server.SOAP.openBill.pos.ads/", "mediaEstado");
-    private final static QName _DespesasY_QNAME = new QName("http://server.SOAP.openBill.pos.ads/", "despesasY");
+    private final static QName _DespesasResponse_QNAME = new QName("http://server.SOAP.openBill.pos.ads/", "despesasResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: pos.openbills
@@ -36,19 +36,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DespesasY }
+     * Create an instance of {@link DespesasResponse }
      * 
      */
-    public DespesasY createDespesasY() {
-        return new DespesasY();
+    public DespesasResponse createDespesasResponse() {
+        return new DespesasResponse();
     }
 
     /**
-     * Create an instance of {@link DespesasYResponse }
+     * Create an instance of {@link Despesas }
      * 
      */
-    public DespesasYResponse createDespesasYResponse() {
-        return new DespesasYResponse();
+    public Despesas createDespesas() {
+        return new Despesas();
     }
 
     /**
@@ -60,12 +60,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DespesasYResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Despesas }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://server.SOAP.openBill.pos.ads/", name = "despesasYResponse")
-    public JAXBElement<DespesasYResponse> createDespesasYResponse(DespesasYResponse value) {
-        return new JAXBElement<DespesasYResponse>(_DespesasYResponse_QNAME, DespesasYResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://server.SOAP.openBill.pos.ads/", name = "despesas")
+    public JAXBElement<Despesas> createDespesas(Despesas value) {
+        return new JAXBElement<Despesas>(_Despesas_QNAME, Despesas.class, null, value);
     }
 
     /**
@@ -78,12 +78,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DespesasY }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link DespesasResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://server.SOAP.openBill.pos.ads/", name = "despesasY")
-    public JAXBElement<DespesasY> createDespesasY(DespesasY value) {
-        return new JAXBElement<DespesasY>(_DespesasY_QNAME, DespesasY.class, null, value);
+    @XmlElementDecl(namespace = "http://server.SOAP.openBill.pos.ads/", name = "despesasResponse")
+    public JAXBElement<DespesasResponse> createDespesasResponse(DespesasResponse value) {
+        return new JAXBElement<DespesasResponse>(_DespesasResponse_QNAME, DespesasResponse.class, null, value);
     }
 
 }

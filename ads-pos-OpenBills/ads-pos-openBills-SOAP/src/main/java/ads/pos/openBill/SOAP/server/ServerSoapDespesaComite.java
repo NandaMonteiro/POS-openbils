@@ -29,30 +29,33 @@ public class ServerSoapDespesaComite {
         switch (ano) {
 
             case 2002:
-               sql = "select sg_uf as media_despesa, avg(vr_despesa) as mediaDespesaComite \n"
-                        + "from despesa_comite2002 group by sg_uf";
+               sql = "select sg_uf as nomeEstado, avg(vr_despesa) as mediaDespesaComite "
+                        + "from despesa_comite2002 group by sg_uf order by nomeEstado";
                 break;
 
             case 2004:
-                sql = "select no_ue as media_despesa, avg(vr_despesa) as mediaDespesaComite \n"
-                        + "from despesa_comite2004 group by no_ue";
+                sql = "select no_ue as nomeEstado, avg(vr_despesa) as mediaDespesaComite "
+                        + "from despesa_comite2004 group by no_ue order by nomeEstado";
                 break;
 
             case 2006:
-                sql = "select sg_ue as media_despesa, avg(vr_despesa) as mediaDespesaComite \n"
-                        + "from despesa_comite2006 group by sg_ue";
+                sql = "select sg_ue as nomeEstado, avg(vr_despesa) as mediaDespesaComite "
+                        + "from despesa_comite2006 group by sg_ue order by nomeEstado";
                 break;
 
             case 2008:
-                sql = "select sg_ue_superior as media_despesa, avg(vr_despesa) as mediaDespesaComite \n"
-                        + "from despesa_comite2008 group by sg_ue_superior";
+                sql = "select sg_ue_superior as nomeEstado, avg(vr_despesa) as mediaDespesaComite "
+                        + "from despesa_comite2008 group by sg_ue_superior order by nomeEstado";
                 break;
 
             default:
                 return null;
         }
 
+        
         Query query = entityManager.createNativeQuery(sql, "DespesaComite");
+        List<MediaComite> lista = query.getResultList();
+
         return query.getResultList();
 
     }

@@ -14,37 +14,39 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement
 public class MediaComite implements Serializable{
-    private String nome_estado;
+    private String nomeEstado;
     private double mediaDespesaComite;
 
     public MediaComite() {
     }
 
-    public MediaComite(String nome_estado, double media_despesa) {
-        this.nome_estado = nome_estado;
-        this.mediaDespesaComite = media_despesa;
+    public MediaComite(String nomeEstado, double mediaDespesaComite) {
+        this.nomeEstado = nomeEstado;
+        this.mediaDespesaComite = mediaDespesaComite;
+    }
+    
+    public String getNomeEstado() {
+        return nomeEstado;
     }
 
-    public String getNome_estado() {
-        return nome_estado;
+    public void setNomeEstado(String nomeEstado) {
+        this.nomeEstado = nomeEstado;
     }
 
-    public void setNome_estado(String nome_estado) {
-        this.nome_estado = nome_estado;
-    }
-
-    public double getMedia_despesa() {
+    public double getMediaDespesaComite() {
         return mediaDespesaComite;
     }
 
-    public void setMedia_despesa(double media_despesa) {
-        this.mediaDespesaComite = media_despesa;
+    public void setMediaDespesaComite(double mediaDespesaComite) {
+        this.mediaDespesaComite = mediaDespesaComite;
     }
 
     @Override
     public String toString() {
-        return "MediaComite{" + "nome_estado=" + nome_estado + ", mediaDespesaComite=" + mediaDespesaComite + '}';
+        return "MediaComite{" + "nomeEstado=" + nomeEstado + ", mediaDespesaComite=" + mediaDespesaComite + '}';
     }
+
+
     
     
 }

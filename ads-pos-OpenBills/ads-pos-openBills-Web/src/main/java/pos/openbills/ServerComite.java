@@ -42,13 +42,13 @@ public interface ServerComite {
      * 
      * @param ano
      * @return
-     *     returns java.util.List<pos.openbills.ReceitaComiteValor>
+     *     returns java.util.List<pos.openbills.MediaEstado>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "despesas", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.Despesas")
     @ResponseWrapper(localName = "despesasResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.DespesasResponse")
-    public List<ReceitaComiteValor> despesas(
+    public List<MediaEstado> despesas(
         @WebParam(name = "ano", targetNamespace = "")
         int ano);
 
