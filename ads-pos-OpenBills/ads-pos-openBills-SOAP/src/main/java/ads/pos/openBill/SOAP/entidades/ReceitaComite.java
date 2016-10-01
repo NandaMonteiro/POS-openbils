@@ -30,7 +30,6 @@ import javax.persistence.TemporalType;
                 columns = {
                     @ColumnResult(name = "nome_comite", type = String.class),
                     @ColumnResult(name = "valor_receita", type = Double.class),
-//                    @ColumnResult(name = "quantidade_orgaos", type = Double.class)
                     
                 }))
 

@@ -7,17 +7,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for mediaEstado complex type.
+ * <p>Java class for quantidadeDespesaCandidatoSoma complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="mediaEstado">
+ * &lt;complexType name="quantidadeDespesaCandidatoSoma">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
+ *         &lt;element name="cargo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="estado" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="receita" type="{http://www.w3.org/2001/XMLSchema}double"/>
+ *         &lt;element name="soma" type="{http://www.w3.org/2001/XMLSchema}double"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,14 +28,40 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "mediaEstado", propOrder = {
+@XmlType(name = "quantidadeDespesaCandidatoSoma", propOrder = {
+    "cargo",
     "estado",
-    "receita"
+    "soma"
 })
-public class MediaEstado {
+public class QuantidadeDespesaCandidatoSoma {
 
+    protected String cargo;
     protected String estado;
-    protected double receita;
+    protected double soma;
+
+    /**
+     * Gets the value of the cargo property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCargo() {
+        return cargo;
+    }
+
+    /**
+     * Sets the value of the cargo property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCargo(String value) {
+        this.cargo = value;
+    }
 
     /**
      * Gets the value of the estado property.
@@ -61,19 +88,19 @@ public class MediaEstado {
     }
 
     /**
-     * Gets the value of the receita property.
+     * Gets the value of the soma property.
      * 
      */
-    public double getReceita() {
-        return receita;
+    public double getSoma() {
+        return soma;
     }
 
     /**
-     * Sets the value of the receita property.
+     * Sets the value of the soma property.
      * 
      */
-    public void setReceita(double value) {
-        this.receita = value;
+    public void setSoma(double value) {
+        this.soma = value;
     }
 
 }

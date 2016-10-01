@@ -6,6 +6,7 @@
 package ads.pos.openBill.SOAP.entidades;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.Date;
 import javax.inject.Named;
 import javax.persistence.ColumnResult;
@@ -28,12 +29,8 @@ import javax.persistence.TemporalType;
         classes = @ConstructorResult(
                 targetClass = QuantidadeDespesaCandidato.class,
                 columns = {
-//                    @ColumnResult(name = "estado", type = String.class),
-//                    @ColumnResult(name = "soma", type = Double.class),
-                    @ColumnResult(name = "sigla_partido", type = String.class),
-//                    @ColumnResult(name = "nome", type = String.class),
-//                    @ColumnResult(name = "cargo", type = String.class),
-//                    @ColumnResult(name = "valorDespesa", type = Double.class)
+                    @ColumnResult(name = "qtdeCandidato", type = BigInteger.class),
+                    @ColumnResult(name = "siglaPartido", type = String.class),
                 }))
 
 

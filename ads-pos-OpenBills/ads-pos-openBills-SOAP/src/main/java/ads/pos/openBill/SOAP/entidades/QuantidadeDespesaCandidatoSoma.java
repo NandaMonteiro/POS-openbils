@@ -16,13 +16,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class QuantidadeDespesaCandidatoSoma implements Serializable{
     private String estado;
     private double soma;
-
+    private String cargo;
 
     public QuantidadeDespesaCandidatoSoma() {
     }
 
-    public QuantidadeDespesaCandidatoSoma(String estado, double soma) {
+    public QuantidadeDespesaCandidatoSoma(String estado, double soma, String cargo) {
         this.estado = estado;
+        this.cargo = cargo;
         this.soma = soma;
     }
 
@@ -43,10 +44,20 @@ public class QuantidadeDespesaCandidatoSoma implements Serializable{
         this.soma = soma;
     }
 
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
     @Override
     public String toString() {
-        return "QuantidadeDespesaCandidatoSoma{" + "estado=" + estado + ", soma=" + soma + '}';
+        return "QuantidadeDespesaCandidatoSoma{" + "estado=" + estado + ", cargo=" + cargo + ", soma=" + soma + '}';
     }
+    
+    
 
 
 }

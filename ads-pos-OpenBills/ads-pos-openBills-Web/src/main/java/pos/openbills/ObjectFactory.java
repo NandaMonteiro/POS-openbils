@@ -24,9 +24,9 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Despesas_QNAME = new QName("http://server.SOAP.openBill.pos.ads/", "despesas");
+    private final static QName _MediaDespesasDoEstadoResponse_QNAME = new QName("http://server.SOAP.openBill.pos.ads/", "mediaDespesasDoEstadoResponse");
+    private final static QName _MediaDespesasDoEstado_QNAME = new QName("http://server.SOAP.openBill.pos.ads/", "mediaDespesasDoEstado");
     private final static QName _MediaEstado_QNAME = new QName("http://server.SOAP.openBill.pos.ads/", "mediaEstado");
-    private final static QName _DespesasResponse_QNAME = new QName("http://server.SOAP.openBill.pos.ads/", "despesasResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: pos.openbills
@@ -36,19 +36,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DespesasResponse }
+     * Create an instance of {@link MediaDespesasDoEstado }
      * 
      */
-    public DespesasResponse createDespesasResponse() {
-        return new DespesasResponse();
+    public MediaDespesasDoEstado createMediaDespesasDoEstado() {
+        return new MediaDespesasDoEstado();
     }
 
     /**
-     * Create an instance of {@link Despesas }
+     * Create an instance of {@link MediaDespesasDoEstadoResponse }
      * 
      */
-    public Despesas createDespesas() {
-        return new Despesas();
+    public MediaDespesasDoEstadoResponse createMediaDespesasDoEstadoResponse() {
+        return new MediaDespesasDoEstadoResponse();
     }
 
     /**
@@ -60,12 +60,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Despesas }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link MediaDespesasDoEstadoResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://server.SOAP.openBill.pos.ads/", name = "despesas")
-    public JAXBElement<Despesas> createDespesas(Despesas value) {
-        return new JAXBElement<Despesas>(_Despesas_QNAME, Despesas.class, null, value);
+    @XmlElementDecl(namespace = "http://server.SOAP.openBill.pos.ads/", name = "mediaDespesasDoEstadoResponse")
+    public JAXBElement<MediaDespesasDoEstadoResponse> createMediaDespesasDoEstadoResponse(MediaDespesasDoEstadoResponse value) {
+        return new JAXBElement<MediaDespesasDoEstadoResponse>(_MediaDespesasDoEstadoResponse_QNAME, MediaDespesasDoEstadoResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link MediaDespesasDoEstado }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://server.SOAP.openBill.pos.ads/", name = "mediaDespesasDoEstado")
+    public JAXBElement<MediaDespesasDoEstado> createMediaDespesasDoEstado(MediaDespesasDoEstado value) {
+        return new JAXBElement<MediaDespesasDoEstado>(_MediaDespesasDoEstado_QNAME, MediaDespesasDoEstado.class, null, value);
     }
 
     /**
@@ -75,15 +84,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://server.SOAP.openBill.pos.ads/", name = "mediaEstado")
     public JAXBElement<MediaEstado> createMediaEstado(MediaEstado value) {
         return new JAXBElement<MediaEstado>(_MediaEstado_QNAME, MediaEstado.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DespesasResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://server.SOAP.openBill.pos.ads/", name = "despesasResponse")
-    public JAXBElement<DespesasResponse> createDespesasResponse(DespesasResponse value) {
-        return new JAXBElement<DespesasResponse>(_DespesasResponse_QNAME, DespesasResponse.class, null, value);
     }
 
 }

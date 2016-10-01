@@ -6,6 +6,7 @@
 package ads.pos.openBill.SOAP.entidades;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -15,50 +16,44 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class ReceitaComiteValorOrgaos implements Serializable {
 
-    private String nome_comite;
-    private double valor;
-    private double quantidade_orgaos;
+    private String estado;
+    private BigInteger quantidade_orgaos;
+    private double valor_receita_estado;
+    
 
     public ReceitaComiteValorOrgaos() {
     }
 
-    public ReceitaComiteValorOrgaos(String nome_comite, double valor, double quantidade_orgaos) {
-        this.nome_comite = nome_comite;
-        this.valor = valor;
+    public ReceitaComiteValorOrgaos(String estado, BigInteger quantidade_orgaos, double valor_receita_estado) {
+        this.estado = estado;
         this.quantidade_orgaos = quantidade_orgaos;
+        this.valor_receita_estado = valor_receita_estado;
     }
 
-    public String getNome_comite() {
-        return nome_comite;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setNome_comite(String nome_comite) {
-        this.nome_comite = nome_comite;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
-    public double getValor() {
-        return valor;
-    }
-
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
-
-    public double getQuantidade_orgaos() {
+    public BigInteger getQuantidade_orgaos() {
         return quantidade_orgaos;
     }
 
-    public void setQuantidade_orgaos(double quantidade_orgaos) {
+    public void setQuantidade_orgaos(BigInteger quantidade_orgaos) {
         this.quantidade_orgaos = quantidade_orgaos;
     }
 
-    @Override
-    public String toString() {
-        return "ReceitaComiteValorOrgaos{" + "nome_comite=" + nome_comite + ", valor=" + valor + ", quantidade_orgaos=" + quantidade_orgaos + '}';
+    public double getValor_receita_estado() {
+        return valor_receita_estado;
     }
 
+    public void setValor_receita_estado(double valor_receita_estado) {
+        this.valor_receita_estado = valor_receita_estado;
+    }
 
     
-
     
 }

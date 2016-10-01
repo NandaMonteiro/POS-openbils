@@ -10,16 +10,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for orgaosEstadoResponse complex type.
+ * <p>Java class for despesasTotalComiteResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="orgaosEstadoResponse">
+ * &lt;complexType name="despesasTotalComiteResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{http://server.SOAP.openBill.pos.ads/}receitaComiteValorOrgaos" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="return" type="{http://server.SOAP.openBill.pos.ads/}receitaComiteValor" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,13 +29,13 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "orgaosEstadoResponse", propOrder = {
+@XmlType(name = "despesasTotalComiteResponse", propOrder = {
     "_return"
 })
-public class OrgaosEstadoResponse {
+public class DespesasTotalComiteResponse {
 
     @XmlElement(name = "return")
-    protected List<ReceitaComiteValorOrgaos> _return;
+    protected List<ReceitaComiteValor> _return;
 
     /**
      * Gets the value of the return property.
@@ -55,13 +55,13 @@ public class OrgaosEstadoResponse {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link ReceitaComiteValorOrgaos }
+     * {@link ReceitaComiteValor }
      * 
      * 
      */
-    public List<ReceitaComiteValorOrgaos> getReturn() {
+    public List<ReceitaComiteValor> getReturn() {
         if (_return == null) {
-            _return = new ArrayList<ReceitaComiteValorOrgaos>();
+            _return = new ArrayList<ReceitaComiteValor>();
         }
         return this._return;
     }

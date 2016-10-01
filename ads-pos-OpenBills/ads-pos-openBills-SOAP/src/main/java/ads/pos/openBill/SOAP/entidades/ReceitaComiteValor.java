@@ -17,7 +17,6 @@ public class ReceitaComiteValor implements Serializable {
 
     private String nome_comite;
     private double valor;
-//    private double quantidade_orgaos;
 
     public ReceitaComiteValor() {
     }
@@ -25,7 +24,6 @@ public class ReceitaComiteValor implements Serializable {
     public ReceitaComiteValor(String nome_comite, double valor) {
         this.nome_comite = nome_comite;
         this.valor = valor;
-//       this.quantidade_orgaos = quantidade_orgaos;
     }
 
     public String getNome_comite() {
@@ -43,14 +41,6 @@ public class ReceitaComiteValor implements Serializable {
     public void setValor(double valor) {
         this.valor = valor;
     }
-
-//    public double getQuantidade_orgaos() {
-//        return quantidade_orgaos;
-//    }
-//
-//    public void setQuantidade_orgaos(double quantidade_orgaos) {
-//        this.quantidade_orgaos = quantidade_orgaos;
-//    }
 
     @Override
     public String toString() {

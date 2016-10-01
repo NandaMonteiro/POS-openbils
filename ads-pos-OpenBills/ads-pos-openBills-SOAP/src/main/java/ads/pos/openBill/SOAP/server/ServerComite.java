@@ -29,7 +29,7 @@ public class ServerComite {
     ServerSoapDespesaComite serverDespesaComite;
 
     @WebMethod
-    public List<ReceitaComiteValor> despesas(@WebParam(name = "ano") int ano) {
+    public List<ReceitaComiteValor> despesasTotalComite(@WebParam(name = "ano") int ano) {
         return serverReceitaComite.valorReceita(ano);
 
     }

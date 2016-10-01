@@ -1,23 +1,24 @@
 
 package pos.openbills;
 
+import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de quantidadeDespesaCandidato complex type.
+ * <p>Java class for quantidadeDespesaCandidato complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="quantidadeDespesaCandidato">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="sigla_partido" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="qtdeCandidato" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
+ *         &lt;element name="siglaPartido" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -28,15 +29,40 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "quantidadeDespesaCandidato", propOrder = {
+    "qtdeCandidato",
     "siglaPartido"
 })
 public class QuantidadeDespesaCandidato {
 
-    @XmlElement(name = "sigla_partido")
+    protected BigInteger qtdeCandidato;
     protected String siglaPartido;
 
     /**
-     * Obtém o valor da propriedade siglaPartido.
+     * Gets the value of the qtdeCandidato property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
+     */
+    public BigInteger getQtdeCandidato() {
+        return qtdeCandidato;
+    }
+
+    /**
+     * Sets the value of the qtdeCandidato property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
+     */
+    public void setQtdeCandidato(BigInteger value) {
+        this.qtdeCandidato = value;
+    }
+
+    /**
+     * Gets the value of the siglaPartido property.
      * 
      * @return
      *     possible object is
@@ -48,7 +74,7 @@ public class QuantidadeDespesaCandidato {
     }
 
     /**
-     * Define o valor da propriedade siglaPartido.
+     * Sets the value of the siglaPartido property.
      * 
      * @param value
      *     allowed object is

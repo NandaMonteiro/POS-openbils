@@ -13,30 +13,31 @@
 
     <body>         
 
-        Média da despesas por estados
+        Candidatos por partido
         
         <h:form prependId="false">
             
-            <h:selectOneMenu value="#{service.ano}" required="true">
+            <h:selectOneMenu value="#{serviceCandidatoPorPartido.ano}" required="true">
                 <f:selectItem itemLabel="Selecione um ano" itemValue="" />
+                <f:selectItem itemLabel="2002" itemValue="2002" />
                 <f:selectItem itemLabel="2004" itemValue="2004" />
                 <f:selectItem itemLabel="2006" itemValue="2006" />
                 <f:selectItem itemLabel="2008" itemValue="2008" />
             </h:selectOneMenu>
             
-            <h:commandButton action="#{service.submeter()}" value="Submeter" />
+            <h:commandButton action="#{serviceCandidatoPorPartido.submeter()}" value="Submeter" />
 
-            <h:dataTable value="#{service.lista}" var="o" >
+            <h:dataTable value="#{serviceCandidatoPorPartido.listaServiceCandidatoPorPartido}" var="o" >
                 <h:column>
                     <!-- column header -->
-                    <f:facet name="header">Estado</f:facet>
+                    <f:facet name="header">Sigla do Partido</f:facet>
                     <!-- row record -->
-                    #{o.estado}
+                    #{o.siglaPartido}
                 </h:column>
 
                 <h:column>
-                    <f:facet name="header">Media da receita</f:facet>
-                        #{o.receita}
+                    <f:facet name="header">Quantidade de Candidatos </f:facet>
+                        #{o.qtdeCandidato}
                 </h:column>
             </h:dataTable>
 

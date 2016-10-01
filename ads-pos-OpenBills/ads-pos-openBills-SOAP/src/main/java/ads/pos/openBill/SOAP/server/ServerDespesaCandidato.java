@@ -52,115 +52,89 @@ public class ServerDespesaCandidato {
             default:
                 return null;
         }
-//        String sql2002 = "";
-//        String sql2004 = "";
-//        String sql2006 = "";
-//        String sql2008 = "";
 
-        Query query
-                = //= entityManager.createNativeQuery(sql2002, "ValorDespesaCandidato");
-                entityManager.createNativeQuery(sql, "DespesaCandidato1");
-//        entityManager.createNativeQuery(sql2006, "DespesaCandidato");
-//        entityManager.createNativeQuery(sql2008, "DespesaCandidato");
-
+        Query query = entityManager.createNativeQuery(sql, "DespesaCandidato1");
         return query.getResultList();
 
     }
 
-    public List<QuantidadeDespesaCandidato> quantidaCandidato(int ano) {
+    public List<QuantidadeDespesaCandidato> quantidadeCandidato(int ano) {
         String sql;
 
         switch (ano) {
             case 2002:
-                 sql = "select d.sg_part, COUNT(distinct d.no_cand) from "
+                 sql = "select d.sg_part as siglaPartido, COUNT(distinct d.no_cand) as qtdeCandidato from "
                         + "despesa_candidato2002 d group by d.sg_part";
 
                 break;
 
             case 2004:
-                sql = "select d.sg_part, COUNT(distinct d.no_cand) from"
+                sql = "select d.sg_part as siglaPartido, COUNT(distinct d.no_cand) as qtdeCandidato from"
                         + " despesa_candidato2004 d group by d.sg_part";
 
                 break;
             case 2006:
 
-                sql = "select d.sg_part, COUNT(distinct d.no_cand) from"
-                        + " despesa_candidato2004 d group by d.sg_part";
+                sql = "select d.sigla_partido as siglaPartido, COUNT(distinct d.nome_candidato) as qtdeCandidato from " +
+                        "despesa_candidato2006 d group by d.sigla_partido";
 
                 break;
             case 2008:
 
-                 sql = "select d.sigla_part, COUNT(distinct d.nome_cand) from "
-                        + "despesa_candidato2004 d group by d.sigla_part";
+                 sql = "select d.sg_part as siglaPartido, COUNT(distinct d.no_cand) as qtdeCandidato from " +
+                        "despesa_candidato2008 d group by d.sg_part";
 
                 break;
             default:
                 return null;
         }
-//        String sql2002 = "";
-//        String sql2004 = "";
-//        String sql2006 = "";
-//        String sql2008 = "";
-
-        Query query
-                = entityManager.createNativeQuery(sql, "DespesaCandidato");
-//        entityManager.createNativeQuery(sql2004, "DespesaCandidato");
-//        entityManager.createNativeQuery(sql2006, "DespesaCandidato");
-//        entityManager.createNativeQuery(sql2008, "DespesaCandidato");
-
+        
+        Query query = entityManager.createNativeQuery(sql, "DespesaCandidato");
         return query.getResultList();
 
     }
 
-    public List<QuantidadeDespesaCandidato> candidatosMaisGastaram(int ano) {
+    public List<QuantidadeDespesaCandidatoSoma> candidatosMaisGastaram(int ano) {
         String sql;
 
         switch (ano) {
             case 2002:
-                sql = "select distinct d.nome_candidato, d.descricao_cargo, SUM(d.valor_despesa) as valor\n"
-                        + "from despesa_candidato2006 d where d.unidade_eleitoral_candidato ilike 'pb'\n"
-                        + "group by d.nome_candidato, d.descricao_cargo order by valor desc\n"
-                        + "limit 10;";
-
-                break;
+//                não é possível realizar consulta: tipo valor despesa continua varchar                
+//                sql = "select distinct d.nome_candidato, d.descricao_cargo, SUM(d.valor_despesa) as valor\n"
+//                        + "from despesa_candidato2002 d where d.unidade_eleitoral_candidato ilike 'pb'\n"
+//                        + "group by d.nome_candidato, d.descricao_cargo order by valor desc\n"
+//                        + "limit 10;";
+//
+//                break;
 
             case 2004:
-                sql = "select distinct d.nome_candidato, d.descricao_cargo, SUM(d.valor_despesa) as valor\n"
-                        + "from despesa_candidato2006 d where d.unidade_eleitoral_candidato ilike 'pb'\n"
-                        + "group by d.nome_candidato, d.descricao_cargo order by valor desc\n"
-                        + "limit 10;";
+                sql = "select distinct d.no_cand, d.ds_cargo, SUM(d.vr_despesa) as valor " +
+                        "from despesa_candidato2004 d where sg_uf ilike 'pb' " +
+                        "group by d.no_cand, d.ds_cargo order by valor desc " +
+                        "limit 10;";
 
                 break;
             case 2006:
 
-                sql = "select distinct d.nome_candidato, d.descricao_cargo, SUM(d.valor_despesa) as valor\n"
-                        + "from despesa_candidato2006 d where d.unidade_eleitoral_candidato ilike 'pb'\n"
-                        + "group by d.nome_candidato, d.descricao_cargo order by valor desc\n"
+                sql = "select distinct d.nome_candidato, d.descricao_cargo, SUM(d.valor_despesa) as valor "
+                        + "from despesa_candidato2006 d where d.unidade_eleitoral_candidato ilike 'pb' "
+                        + "group by d.nome_candidato, d.descricao_cargo order by valor desc "
                         + "limit 10;";
 
                 break;
             case 2008:
 
-                sql = "select distinct d.nome_candidato, d.descricao_cargo, SUM(d.valor_despesa) as valor\n"
-                        + "from despesa_candidato2006 d where d.unidade_eleitoral_candidato ilike 'pb'\n"
-                        + "group by d.nome_candidato, d.descricao_cargo order by valor desc\n"
-                        + "limit 10;";
+                sql = "select distinct d.no_cand, d.ds_cargo, SUM(d.vr_despesa) as valor " +
+                        "from despesa_candidato2008 d where sg_ue_superior ilike 'pb' " +
+                        "group by d.no_cand, d.ds_cargo order by valor desc " +
+                        "limit 10";
 
                 break;
             default:
                 return null;
         }
-//        String sql2002 = "";
-//        String sql2004 = "";
-//        String sql2006 = "";
-//        String sql2008 = "";
 
-        Query query
-                = entityManager.createNativeQuery(sql, "DespesaCandidato");
-//        entityManager.createNativeQuery(sql2004, "DespesaCandidato");
-//        entityManager.createNativeQuery(sql2006, "DespesaCandidato");
-//        entityManager.createNativeQuery(sql2008, "DespesaCandidato");
-
+        Query query = entityManager.createNativeQuery(sql, "DespesaCandidato1");
         return query.getResultList();
 
     }

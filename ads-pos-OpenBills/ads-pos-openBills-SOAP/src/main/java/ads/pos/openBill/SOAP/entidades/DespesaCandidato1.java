@@ -7,7 +7,6 @@ package ads.pos.openBill.SOAP.entidades;
 
 import java.io.Serializable;
 import java.util.Date;
-import javax.inject.Named;
 import javax.persistence.ColumnResult;
 import javax.persistence.ConstructorResult;
 import javax.persistence.Entity;
@@ -15,7 +14,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SqlResultSetMapping;
-import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -30,10 +28,7 @@ import javax.persistence.TemporalType;
                 columns = {
                     @ColumnResult(name = "estado", type = String.class),
                     @ColumnResult(name = "soma", type = Double.class),
-//                    @ColumnResult(name = "sigla_partido", type = String.class),
-//                    @ColumnResult(name = "nome", type = String.class),
-//                    @ColumnResult(name = "cargo", type = String.class),
-//                    @ColumnResult(name = "valorDespesa", type = Double.class)
+                    @ColumnResult(name = "cargo", type = String.class),
                 }))
 
 

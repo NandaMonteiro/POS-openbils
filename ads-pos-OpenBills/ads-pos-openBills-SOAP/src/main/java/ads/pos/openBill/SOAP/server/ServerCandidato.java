@@ -30,8 +30,8 @@ public class ServerCandidato {
     }
 
     @WebMethod
-    public List<QuantidadeDespesaCandidato> quantidade(@WebParam(name = "ano") int ano) {
-        return serverSoap.quantidaCandidato(ano);
+    public List<QuantidadeDespesaCandidato> quantidadeCandidato(@WebParam(name = "ano") int ano) {
+        return serverSoap.quantidadeCandidato(ano);
 
     }
 

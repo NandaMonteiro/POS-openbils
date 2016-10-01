@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de mediaComite complex type.
+ * <p>Java class for mediaComite complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="mediaComite">
@@ -37,7 +37,7 @@ public class MediaComite {
     protected String nomeEstado;
 
     /**
-     * Obtém o valor da propriedade mediaDespesaComite.
+     * Gets the value of the mediaDespesaComite property.
      * 
      */
     public double getMediaDespesaComite() {
@@ -45,7 +45,7 @@ public class MediaComite {
     }
 
     /**
-     * Define o valor da propriedade mediaDespesaComite.
+     * Sets the value of the mediaDespesaComite property.
      * 
      */
     public void setMediaDespesaComite(double value) {
@@ -53,7 +53,7 @@ public class MediaComite {
     }
 
     /**
-     * Obtém o valor da propriedade nomeEstado.
+     * Gets the value of the nomeEstado property.
      * 
      * @return
      *     possible object is
@@ -65,7 +65,7 @@ public class MediaComite {
     }
 
     /**
-     * Define o valor da propriedade nomeEstado.
+     * Sets the value of the nomeEstado property.
      * 
      * @param value
      *     allowed object is

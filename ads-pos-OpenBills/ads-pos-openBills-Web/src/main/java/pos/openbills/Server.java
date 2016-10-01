@@ -32,9 +32,9 @@ public interface Server {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "despesas", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.Despesas")
-    @ResponseWrapper(localName = "despesasResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.DespesasResponse")
-    public List<MediaEstado> despesas(
+    @RequestWrapper(localName = "mediaDespesasDoEstado", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.MediaDespesasDoEstado")
+    @ResponseWrapper(localName = "mediaDespesasDoEstadoResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.MediaDespesasDoEstadoResponse")
+    public List<MediaEstado> mediaDespesasDoEstado(
         @WebParam(name = "ano", targetNamespace = "")
         int ano);
 

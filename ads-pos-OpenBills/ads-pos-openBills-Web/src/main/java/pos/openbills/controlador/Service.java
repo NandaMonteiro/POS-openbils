@@ -20,6 +20,8 @@ import pos.openbills.ServerService;
 /**
  *
  * @author nanda
+ * 
+ * Média de gastos dos candidatos por estados
  */
 
 @Named
@@ -35,7 +37,7 @@ public class Service implements Serializable {
     private List<MediaEstado> list() {
         ServerService serverService = new ServerService();
         Server s = serverService.getServerPort();
-        return s.despesas(this.ano);
+        return s.mediaDespesasDoEstado(this.ano);
     }
 
     private JsonArray getJsonList() {

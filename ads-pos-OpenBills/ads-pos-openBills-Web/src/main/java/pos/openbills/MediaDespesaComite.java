@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de mediaDespesaComite complex type.
+ * <p>Java class for mediaDespesaComite complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="mediaDespesaComite">
@@ -34,7 +34,7 @@ public class MediaDespesaComite {
     protected int ano;
 
     /**
-     * Obtém o valor da propriedade ano.
+     * Gets the value of the ano property.
      * 
      */
     public int getAno() {
@@ -42,7 +42,7 @@ public class MediaDespesaComite {
     }
 
     /**
-     * Define o valor da propriedade ano.
+     * Sets the value of the ano property.
      * 
      */
     public void setAno(int value) {
