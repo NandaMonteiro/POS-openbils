@@ -7,40 +7,113 @@
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets" 
     xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
     <head>
-        <title>Open Bills</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Inicio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+
+        <link rel="stylesheet" href="css/bootstrap.css"></link>
+        <link rel="stylesheet" href="css/estilo.css"></link>
+
+        <script type="text/javascript" src="js/jquery-1-12.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
     </head>
 
     <body>         
 
-        Média da despesas por estados
-        
-        <h:form prependId="false">
-            
-            <h:selectOneMenu value="#{service.ano}" required="true">
-                <f:selectItem itemLabel="Selecione um ano" itemValue="" />
-                <f:selectItem itemLabel="2004" itemValue="2004" />
-                <f:selectItem itemLabel="2006" itemValue="2006" />
-                <f:selectItem itemLabel="2008" itemValue="2008" />
-            </h:selectOneMenu>
-            
-            <h:commandButton action="#{service.submeter()}" value="Submeter" />
+        <div class="container">
+            <br/>
+            <h1 class="text-center">
+                Eleições
+            </h1>
+            <br/><br/><br/>
 
-            <h:dataTable value="#{service.lista}" var="o" >
-                <h:column>
-                    <!-- column header -->
-                    <f:facet name="header">Estado</f:facet>
-                    <!-- row record -->
-                    #{o.estado}
-                </h:column>
+            <h:form prependId="false">
 
-                <h:column>
-                    <f:facet name="header">Media da receita</f:facet>
-                        #{o.receita}
-                </h:column>
-            </h:dataTable>
+                <div class="col-md-6">
+                    <a href="grafico/media-despesa-por-estado.xhtml" class="link-para-grafico">
+                        <div class="panel panel-primary">
 
-        </h:form>
+                            <div class="panel-body text-center" >
+                                <img src="imagens/media-despesa-por-estado.png" class="img-responsive img-tamanho-centro"/>
+                            </div>
+                            <div class="panel-heading">Média de Despesas por Estado</div>
 
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6">
+                    <a href="grafico/media-comite.xhtml" class="link-para-grafico">
+                        <div class="panel panel-primary">
+
+                            <div class="panel-body text-center" >
+                                <img src="imagens/media-despesa-por-comite.png" class="img-responsive img-tamanho-centro"/>
+                            </div>
+                            <div class="panel-heading">Média das Despesas por Comitê</div>
+
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-md-6">
+                    <a href="grafico/soma-da-receita-por-comite.xhtml" class="link-para-grafico">
+                        <div class="panel panel-primary">
+
+                            <div class="panel-body text-center" >
+                                <img src="imagens/receita-por-comite.png" class="img-responsive img-tamanho-centro"/>
+                            </div>
+                            <div class="panel-heading">Soma da Receita por Comitê</div>
+
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-md-6">
+                    <a href="grafico/quantidade-de-canditato-por-partido.xhtml" class="link-para-grafico">
+                        <div class="panel panel-primary">
+
+                            <div class="panel-body text-center" >
+                                <img src="imagens/candidatos-por-partido.jpeg" class="img-responsive img-tamanho-centro"/>
+                            </div>
+                            <div class="panel-heading">Quantidade de Canditatos por Partido</div>
+
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-md-6">
+                    <a href="grafico/orgao-comite-estado-receita.xhtml" class="link-para-grafico">
+                        <div class="panel panel-primary">
+
+                            <div class="panel-body text-center" >
+                                <img src="imagens/orgao-receita-estado-valor.png" class="img-responsive img-tamanho-centro"/>
+                            </div>
+                            <div class="panel-heading">Número de Orgãos e Valor da Receita por Estado</div>
+
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-md-6">
+                    <a href="grafico/candidatos-que-mais-gastaram.xhtml" class="link-para-grafico">
+                        <div class="panel panel-primary">
+
+                            <div class="panel-body text-center" >
+                                <img src="imagens/candidatos-que-mais-gastaram.png" class="img-responsive img-tamanho-centro"/>
+                            </div>
+                            <div class="panel-heading">Os 10 Candidatos que Mais Gastaram na Paraíba</div>
+
+                        </div>
+                    </a>
+                </div>
+                
+                
+
+
+
+            </h:form>
+        </div>
+
+
+        <br/><br/><br/>
     </body>
 </html>

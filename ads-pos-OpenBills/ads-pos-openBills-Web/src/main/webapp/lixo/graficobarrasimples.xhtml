@@ -10,9 +10,8 @@
         <title>Open Bills</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        <script type="text/javascript" src="highcharts/jquery.min.js"></script>
-        <style type="text/css">
-        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
         <script type="text/javascript">
 
 
@@ -44,17 +43,17 @@
                         type: 'column'
                     },
                     title: {
-                        text: 'Grafico de alguma coisa do ano ' + ano
+                        text: 'Grafico de Média das Despesas por Estado do ano ' + ano
                     },
                     subtitle: {
-                        text: 'Click the columns to view versions. Source: <a href="http://netmarketshare.com">netmarketshare.com</a>.'
+                        text: 'Fonte: <a href="http://dados.gov.br/dataset/prestacao-de-contas-das-campanhas-eleitorais">dados.gov.br</a>.'
                     },
                     xAxis: {
                         type: 'category'
                     },
                     yAxis: {
                         title: {
-                            text: 'Total percent market share'
+                            text: 'Total em Reais'
                         }
 
                     },
@@ -72,10 +71,10 @@
                     },
                     tooltip: {
                         headerFormat: '<span style="font-size:11px">{series.name}</span><br/>',
-                        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f} R$</b> of total<br/>'
+                        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f} R$</b> de Reais<br/>'
                     },
                     series: [{
-                            name: 'Brands',
+                            name: 'Estado',
                             colorByPoint: true,
                             data: serieList
                         }],

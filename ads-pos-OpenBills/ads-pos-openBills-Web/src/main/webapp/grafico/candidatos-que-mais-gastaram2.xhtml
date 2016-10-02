@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets" 
+    xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <head>
+        <title>Open Bills</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <link rel="stylesheet" href="/ads-pos-openBills-Web/css/bootstrap.css"></link>
+        <link rel="stylesheet" href="/ads-pos-openBills-Web/css/estilo.css"></link>
+
+        <script type="text/javascript" src="/ads-pos-openBills-Web/js/jquery-1-12.min.js"></script>
+        <script type="text/javascript" src="/ads-pos-openBills-Web/js/bootstrap.js"></script>
+
+        <script type="text/javascript">
+            //<![CDATA[ 
+
+
+            var array = #{(serviceCandidatoMaisGastaram.arrayCandidatoMaisGastaram)}
+            var serieList = []
+            var ano = #{(serviceCandidatoMaisGastaram.ano)}
+            var total = 0;
+            var cargos = []
+            var nomeCandidato = []
+            var valorGastoPorCandidato = []
+            var iColor = 2;
+
+
+            function valorTotal(valor) {
+                total = total + valor;
+            }
+
+            function currencyFormat(num) {
+                return num.toFixed(2).replace(".", ",").replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+            }
+
+            //cargos
+            array.forEach(function (a) {
+                cargos.push(a.cargo);
+            });
+
+            var cargos = cargos.reduce(function (a, b) {
+                if (a.indexOf(b) < 0)
+                    a.push(b);
+                return a;
+            }, []);
+
+            console.log(cargos)
+
+            function drilldownPorCargo(cargo) {
+                array.forEach(function (a) {
+                    if (a.cargo == cargo) {
+                        nomeCandidato.push(a.nome)
+                        valorGastoPorCandidato.push(a.valor)
+                    }
+                });
+
+                iColor++;
+
+                return {name: cargo + ' versions',
+                    categories: nomeCandidato,
+                    data: valorGastoPorCandidato,
+                    color: 'colors[' + iColor + ']'
+                }
+
+
+
+
+            }
+
+            array.forEach(function (a) {
+                valorTotal(a.valor);
+            });
+
+            //Data
+            cargos.forEach(function (a) {
+                serieList.push({'y': 30, 'color': 'colors[' + iColor + ']',
+                    'drilldown': drilldownPorCargo(a)
+                })
+            });
+
+
+
+// categories = ['MSIE', 'Firefox', 'Chrome', 'Safari', 'Opera']
+// 
+//{
+//    y: 56.33,
+//    color: colors[0],
+//    drilldown: {
+//        name: 'MSIE versions',
+//        categories: ['MSIE 6.0', 'MSIE 7.0', 'MSIE 8.0', 'MSIE 9.0', 'MSIE 10.0', 'MSIE 11.0'],
+//        data: [1.06, 0.5, 17.2, 8.11, 5.33, 24.13],
+//        color: colors[0]
+//    }
+//}
+
+            $(function () {
+
+                var colors = Highcharts.getOptions().colors,
+                        categories = cargos,
+                        data = serieList,
+                        browserData = [],
+                        versionsData = [],
+                        i,
+                        j,
+                        dataLen = data.length,
+                        drillDataLen,
+                        brightness;
+
+
+                // Build the data arrays
+                for (i = 0; i < dataLen; i += 1) {
+
+                    // add browser data
+                    browserData.push({
+                        name: categories[i],
+                        y: data[i].y,
+                        color: data[i].color
+                    });
+
+                    // add version data
+                    drillDataLen = data[i].drilldown.data.length;
+                    for (j = 0; j < drillDataLen; j += 1) {
+                        brightness = 0.2 - (j / drillDataLen) / 5;
+                        versionsData.push({
+                            name: data[i].drilldown.categories[j],
+                            y: data[i].drilldown.data[j],
+                            color: Highcharts.Color(data[i].color).brighten(brightness).get()
+                        });
+                    }
+                }
+
+                // Create the chart
+                $('#container').highcharts({
+                    chart: {
+                        type: 'pie'
+                    },
+                    title: {
+                        text: 'Browser market share, January, 2015 to May, 2015'
+                    },
+                    subtitle: {
+                        text: 'Source: <a href="http://netmarketshare.com/">netmarketshare.com</a>'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Total percent market share'
+                        }
+                    },
+                    plotOptions: {
+                        pie: {
+                            shadow: false,
+                            center: ['50%', '50%']
+                        }
+                    },
+                    tooltip: {
+                        valueSuffix: '%'
+                    },
+                    series: [{
+                            name: 'Browsers',
+                            data: browserData,
+                            size: '60%',
+                            dataLabels: {
+                                formatter: function () {
+                                    return this.y > 5 ? this.point.name : null;
+                                },
+                                color: '#ffffff',
+                                distance: -30
+                            }
+                        }, {
+                            name: 'Versions',
+                            data: versionsData,
+                            size: '80%',
+                            innerSize: '60%',
+                            dataLabels: {
+                                formatter: function () {
+                                    // display only if larger than 1
+                                    return this.y > 1 ? '<b>' + this.point.name + ':</b> ' + this.y + '%' : null;
+                                }
+                            }
+                        }]
+                });
+            });
+
+            //]]>
+        </script>
+
+
+    </head>
+
+    <body>         
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+        <ui:include src="menu.xhtml"/>       
+
+        <br/><br/>
+        <h:form prependId="false" class="container">
+
+            <div id="container" style="width: 100%; height: 400px; margin: 0 auto"></div>
+
+            <br/><br/>
+            <div class="col-md-9">
+                <h:selectOneMenu value="#{serviceCandidatoMaisGastaram.ano}" required="true" class="form-control input-lg">
+                    <f:selectItem itemLabel="Selecione um ano" itemValue="" />
+                    <f:selectItem itemLabel="2004" itemValue="2004" />
+                    <f:selectItem itemLabel="2006" itemValue="2006" />
+                    <f:selectItem itemLabel="2008" itemValue="2008" />
+                </h:selectOneMenu>
+            </div>
+
+            <h:commandButton action="#{serviceCandidatoMaisGastaram.submeter()}" value="Submeter" class="btn btn-primary btn-lg col-md-3" />
+
+
+
+        </h:form>
+
+    </body>
+</html>

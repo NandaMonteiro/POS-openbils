@@ -72,7 +72,7 @@ public class ServiceMediaComite implements Serializable{
     }
     
     public String submeter() {
-        //System.out.println(">>>> " + this.ano);
+        System.out.println(">>>> " + this.ano);
         this.listaMediaComite = listMediaComite();
         this.arrayMediaComite = getJsonList();
         return null;

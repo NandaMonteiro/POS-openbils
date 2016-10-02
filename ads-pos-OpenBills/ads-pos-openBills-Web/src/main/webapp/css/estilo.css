@@ -1,0 +1,8 @@
+.img-tamanho-centro{
+    max-height: 280px !important; 
+    margin: 0 auto;
+}
+
+.link-para-grafico:hover{
+    text-decoration: none;
+}

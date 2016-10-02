@@ -46,9 +46,9 @@ public interface ServerCandidato {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "despesas", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.Despesas")
-    @ResponseWrapper(localName = "despesasResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.DespesasResponse")
-    public List<QuantidadeDespesaCandidatoSoma> despesas(
+    @RequestWrapper(localName = "maisGastaram", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.MaisGastaram")
+    @ResponseWrapper(localName = "maisGastaramResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.MaisGastaramResponse")
+    public List<QuantidadeDespesaCandidatoSoma> maisGastaram(
         @WebParam(name = "ano", targetNamespace = "")
         int ano);
 
@@ -60,9 +60,9 @@ public interface ServerCandidato {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "maisGastaram", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.MaisGastaram")
-    @ResponseWrapper(localName = "maisGastaramResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.MaisGastaramResponse")
-    public List<QuantidadeDespesaCandidatoSoma> maisGastaram(
+    @RequestWrapper(localName = "despesas", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.Despesas")
+    @ResponseWrapper(localName = "despesasResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.DespesasResponse")
+    public List<QuantidadeDespesaCandidatoSoma> despesas(
         @WebParam(name = "ano", targetNamespace = "")
         int ano);
 

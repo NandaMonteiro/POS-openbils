@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <head>
+        <title>Open Bills</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+
+        <link rel="stylesheet" href="/ads-pos-openBills-Web/css/bootstrap.css"></link>
+        <link rel="stylesheet" href="/ads-pos-openBills-Web/css/estilo.css"></link>
+
+        <script type="text/javascript" src="/ads-pos-openBills-Web/js/jquery-1-12.min.js"></script>
+        <script type="text/javascript" src="/ads-pos-openBills-Web/js/bootstrap.js"></script>
+
+        <script type="text/javascript">
+
+
+            var array = #{(serviceOrgaosComiteEstado.arrayOrgaoComiteEstado)}
+            var serieList = []
+            var ano = #{(serviceOrgaosComiteEstado.ano)}
+
+
+            array.forEach(function (a) {
+                serieList.push([a.estado + ' - Orgãos: ' + a.quantidadeOrgaos, a.valorReceitaEstado])
+            });
+
+
+
+
+//        [
+//            ['Shanghai', 23.7],
+//            ['Lagos', 16.1],
+//            ['Istanbul', 14.2],
+//            ['Karachi', 14.0],
+//            ['Mumbai', 12.5],
+//            ['Moscow', 12.1],
+//            ['São Paulo', 11.8],
+//            ['Beijing', 11.7],
+//            ['Guangzhou', 11.1],
+//            ['Delhi', 11.1],
+//            ['Shenzhen', 10.5],
+//            ['Seoul', 10.4],
+//            ['Jakarta', 10.0],
+//            ['Kinshasa', 9.3],
+//            ['Tianjin', 9.3],
+//            ['Tokyo', 9.0],
+//            ['Cairo', 8.9],
+//            ['Dhaka', 8.9],
+//            ['Mexico City', 8.9],
+//            ['Lima', 8.9]
+//        ]
+
+
+            $(function () {
+                $('#container').highcharts({
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: 'Gráfico de Número de Orgãos e Valor da Receita por Estado do ano de ' + ano
+                    },
+                    subtitle: {
+                        text: 'Fonte: <a href="http://dados.gov.br/dataset/prestacao-de-contas-das-campanhas-eleitorais">dados.gov.br</a>.'
+                    },
+                    xAxis: {
+                        type: 'category',
+                        labels: {
+                            rotation: -45,
+                            style: {
+                                fontSize: '13px',
+                                fontFamily: 'Verdana, sans-serif'
+                            }
+                        }
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: 'Valor'
+                        }
+                    },
+                    legend: {
+                        enabled: false
+                    },
+                    tooltip: {
+                        pointFormat: '<b>{point.y:.1f}</b>'
+                    },
+                    series: [{
+                            name: 'Valor',
+                            data: serieList,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y:.1f}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                });
+            });
+        </script>
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    </head>
+
+    <body>         
+
+        <h:body>
+
+            <ui:include src="menu.xhtml"/>
+
+            <h:form prependId="false" class="container">
+
+
+
+                <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+                <br/><br/>
+                <div class="form-group">
+                    <label class="col-md-12">Selecione um Ano:</label>
+                    <div class="col-md-9">
+                        <h:selectOneMenu value="#{serviceOrgaosComiteEstado.ano}" required="true" class="form-control input-lg">
+                            <f:selectItem itemLabel="Selecione um ano" itemValue="" />
+                            <f:selectItem itemLabel="2002" itemValue="2002" />
+                            <f:selectItem itemLabel="2004" itemValue="2004" />
+                            <f:selectItem itemLabel="2006" itemValue="2006" />
+                            <f:selectItem itemLabel="2008" itemValue="2008" />
+                        </h:selectOneMenu>
+                    </div>
+
+                    <h:commandButton action="#{serviceOrgaosComiteEstado.submeter()}" value="Submeter" class="btn btn-primary btn-lg col-md-3" />
+                </div>
+
+
+            </h:form>
+        </h:body>
+    </body>
+</html>

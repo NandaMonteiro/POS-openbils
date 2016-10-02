@@ -108,7 +108,7 @@ public class ServerDespesaCandidato {
 //                break;
 
             case 2004:
-                sql = "select distinct d.ds_cargo, d.no_cand, SUM(d.vr_despesa) as valor " +
+                sql = "select distinct d.ds_cargo as cargo, d.no_cand as nome, SUM(d.vr_despesa) as valor " +
                         "from despesa_candidato2004 d where sg_uf ilike 'pb' " +
                         "group by d.no_cand, d.ds_cargo order by valor desc " +
                         "limit 10;";
@@ -116,7 +116,7 @@ public class ServerDespesaCandidato {
                 break;
             case 2006:
 
-                sql = "select distinct  d.descricao_cargo, d.nome_candidato, SUM(d.valor_despesa) as valor "
+                sql = "select distinct  d.descricao_cargo as cargo, d.nome_candidato as nome, SUM(d.valor_despesa) as valor "
                         + "from despesa_candidato2006 d where d.unidade_eleitoral_candidato ilike 'pb' "
                         + "group by d.nome_candidato, d.descricao_cargo order by valor desc "
                         + "limit 10;";
@@ -124,7 +124,7 @@ public class ServerDespesaCandidato {
                 break;
             case 2008:
 
-                sql = "select distinct d.ds_cargo, d.no_cand, SUM(d.vr_despesa) as valor " +
+                sql = "select distinct d.ds_cargo as cargo, d.no_cand as nome, SUM(d.vr_despesa) as valor " +
                         "from despesa_candidato2008 d where sg_ue_superior ilike 'pb' " +
                         "group by d.no_cand, d.ds_cargo order by valor desc " +
                         "limit 10";
