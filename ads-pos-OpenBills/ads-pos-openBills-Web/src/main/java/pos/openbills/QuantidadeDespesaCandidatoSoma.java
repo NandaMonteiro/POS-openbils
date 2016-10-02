@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for quantidadeDespesaCandidatoSoma complex type.
+ * <p>Classe Java de quantidadeDespesaCandidatoSoma complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType name="quantidadeDespesaCandidatoSoma">
@@ -17,8 +17,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="cargo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="estado" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="soma" type="{http://www.w3.org/2001/XMLSchema}double"/>
+ *         &lt;element name="nome" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="valor" type="{http://www.w3.org/2001/XMLSchema}double"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -30,17 +30,17 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "quantidadeDespesaCandidatoSoma", propOrder = {
     "cargo",
-    "estado",
-    "soma"
+    "nome",
+    "valor"
 })
 public class QuantidadeDespesaCandidatoSoma {
 
     protected String cargo;
-    protected String estado;
-    protected double soma;
+    protected String nome;
+    protected double valor;
 
     /**
-     * Gets the value of the cargo property.
+     * Obtém o valor da propriedade cargo.
      * 
      * @return
      *     possible object is
@@ -52,7 +52,7 @@ public class QuantidadeDespesaCandidatoSoma {
     }
 
     /**
-     * Sets the value of the cargo property.
+     * Define o valor da propriedade cargo.
      * 
      * @param value
      *     allowed object is
@@ -64,43 +64,43 @@ public class QuantidadeDespesaCandidatoSoma {
     }
 
     /**
-     * Gets the value of the estado property.
+     * Obtém o valor da propriedade nome.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getEstado() {
-        return estado;
+    public String getNome() {
+        return nome;
     }
 
     /**
-     * Sets the value of the estado property.
+     * Define o valor da propriedade nome.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setEstado(String value) {
-        this.estado = value;
+    public void setNome(String value) {
+        this.nome = value;
     }
 
     /**
-     * Gets the value of the soma property.
+     * Obtém o valor da propriedade valor.
      * 
      */
-    public double getSoma() {
-        return soma;
+    public double getValor() {
+        return valor;
     }
 
     /**
-     * Sets the value of the soma property.
+     * Define o valor da propriedade valor.
      * 
      */
-    public void setSoma(double value) {
-        this.soma = value;
+    public void setValor(double value) {
+        this.valor = value;
     }
 
 }

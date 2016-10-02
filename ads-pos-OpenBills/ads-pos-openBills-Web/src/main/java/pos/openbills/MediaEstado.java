@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for mediaEstado complex type.
+ * <p>Classe Java de mediaEstado complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType name="mediaEstado">
@@ -37,7 +37,7 @@ public class MediaEstado {
     protected double receita;
 
     /**
-     * Gets the value of the estado property.
+     * Obtém o valor da propriedade estado.
      * 
      * @return
      *     possible object is
@@ -49,7 +49,7 @@ public class MediaEstado {
     }
 
     /**
-     * Sets the value of the estado property.
+     * Define o valor da propriedade estado.
      * 
      * @param value
      *     allowed object is
@@ -61,7 +61,7 @@ public class MediaEstado {
     }
 
     /**
-     * Gets the value of the receita property.
+     * Obtém o valor da propriedade receita.
      * 
      */
     public double getReceita() {
@@ -69,7 +69,7 @@ public class MediaEstado {
     }
 
     /**
-     * Sets the value of the receita property.
+     * Define o valor da propriedade receita.
      * 
      */
     public void setReceita(double value) {

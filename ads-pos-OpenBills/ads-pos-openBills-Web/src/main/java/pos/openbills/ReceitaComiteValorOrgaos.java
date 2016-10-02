@@ -9,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for receitaComiteValorOrgaos complex type.
+ * <p>Classe Java de receitaComiteValorOrgaos complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType name="receitaComiteValorOrgaos">
@@ -44,7 +44,7 @@ public class ReceitaComiteValorOrgaos {
     protected double valorReceitaEstado;
 
     /**
-     * Gets the value of the estado property.
+     * Obtém o valor da propriedade estado.
      * 
      * @return
      *     possible object is
@@ -56,7 +56,7 @@ public class ReceitaComiteValorOrgaos {
     }
 
     /**
-     * Sets the value of the estado property.
+     * Define o valor da propriedade estado.
      * 
      * @param value
      *     allowed object is
@@ -68,7 +68,7 @@ public class ReceitaComiteValorOrgaos {
     }
 
     /**
-     * Gets the value of the quantidadeOrgaos property.
+     * Obtém o valor da propriedade quantidadeOrgaos.
      * 
      * @return
      *     possible object is
@@ -80,7 +80,7 @@ public class ReceitaComiteValorOrgaos {
     }
 
     /**
-     * Sets the value of the quantidadeOrgaos property.
+     * Define o valor da propriedade quantidadeOrgaos.
      * 
      * @param value
      *     allowed object is
@@ -92,7 +92,7 @@ public class ReceitaComiteValorOrgaos {
     }
 
     /**
-     * Gets the value of the valorReceitaEstado property.
+     * Obtém o valor da propriedade valorReceitaEstado.
      * 
      */
     public double getValorReceitaEstado() {
@@ -100,7 +100,7 @@ public class ReceitaComiteValorOrgaos {
     }
 
     /**
-     * Sets the value of the valorReceitaEstado property.
+     * Define o valor da propriedade valorReceitaEstado.
      * 
      */
     public void setValorReceitaEstado(double value) {

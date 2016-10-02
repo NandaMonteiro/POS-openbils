@@ -7,12 +7,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de quantidadeCandidato complex type.
+ * <p>Classe Java de maisGastaram complex type.
  * 
  * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
- * &lt;complexType name="quantidadeCandidato">
+ * &lt;complexType name="maisGastaram">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -26,10 +26,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "quantidadeCandidato", propOrder = {
+@XmlType(name = "maisGastaram", propOrder = {
     "ano"
 })
-public class QuantidadeCandidato {
+public class MaisGastaram {
 
     protected int ano;
 

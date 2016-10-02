@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for quantidadeDespesaCandidato complex type.
+ * <p>Classe Java de quantidadeDespesaCandidato complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType name="quantidadeDespesaCandidato">
@@ -38,7 +38,7 @@ public class QuantidadeDespesaCandidato {
     protected String siglaPartido;
 
     /**
-     * Gets the value of the qtdeCandidato property.
+     * Obtém o valor da propriedade qtdeCandidato.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class QuantidadeDespesaCandidato {
     }
 
     /**
-     * Sets the value of the qtdeCandidato property.
+     * Define o valor da propriedade qtdeCandidato.
      * 
      * @param value
      *     allowed object is
@@ -62,7 +62,7 @@ public class QuantidadeDespesaCandidato {
     }
 
     /**
-     * Gets the value of the siglaPartido property.
+     * Obtém o valor da propriedade siglaPartido.
      * 
      * @return
      *     possible object is
@@ -74,7 +74,7 @@ public class QuantidadeDespesaCandidato {
     }
 
     /**
-     * Sets the value of the siglaPartido property.
+     * Define o valor da propriedade siglaPartido.
      * 
      * @param value
      *     allowed object is

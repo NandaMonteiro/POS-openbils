@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for receitaComiteValor complex type.
+ * <p>Classe Java de receitaComiteValor complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType name="receitaComiteValor">
@@ -39,7 +39,7 @@ public class ReceitaComiteValor {
     protected double valor;
 
     /**
-     * Gets the value of the nomeComite property.
+     * Obtém o valor da propriedade nomeComite.
      * 
      * @return
      *     possible object is
@@ -51,7 +51,7 @@ public class ReceitaComiteValor {
     }
 
     /**
-     * Sets the value of the nomeComite property.
+     * Define o valor da propriedade nomeComite.
      * 
      * @param value
      *     allowed object is
@@ -63,7 +63,7 @@ public class ReceitaComiteValor {
     }
 
     /**
-     * Gets the value of the valor property.
+     * Obtém o valor da propriedade valor.
      * 
      */
     public double getValor() {
@@ -71,7 +71,7 @@ public class ReceitaComiteValor {
     }
 
     /**
-     * Sets the value of the valor property.
+     * Define o valor da propriedade valor.
      * 
      */
     public void setValor(double value) {

@@ -26,9 +26,9 @@ import javax.persistence.TemporalType;
         classes = @ConstructorResult(
                 targetClass = QuantidadeDespesaCandidatoSoma.class,
                 columns = {
-                    @ColumnResult(name = "estado", type = String.class),
-                    @ColumnResult(name = "soma", type = Double.class),
                     @ColumnResult(name = "cargo", type = String.class),
+                    @ColumnResult(name = "nome", type = String.class),                    
+                    @ColumnResult(name = "valor", type = Double.class),
                 }))
 
 

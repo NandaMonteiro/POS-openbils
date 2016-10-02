@@ -13,7 +13,7 @@
 
     <body>         
 
-        Candidatos que mais gastaram
+        Os 10 Candidatos da Paraíba que mais gastaram
         
         <h:form prependId="false">
             
@@ -29,19 +29,19 @@
             <h:dataTable value="#{serviceCandidatoMaisGastaram.listaCandidatoMaisGastaram}" var="o" >
                 <h:column>
                     <!-- column header -->
-                    <f:facet name="header">Estado</f:facet>
+                    <f:facet name="header">Cargo do Candidato</f:facet>
                     <!-- row record -->
-                    #{o.estado}
+                    #{o.cargo}
                 </h:column>
 
                 <h:column>
-                    <f:facet name="header">Cargo</f:facet>
-                        #{o.cargo}
+                    <f:facet name="header">Nome do Candidato</f:facet>
+                        #{o.nome}
                 </h:column>
                 
                 <h:column>
-                    <f:facet name="header">Soma</f:facet>
-                        #{o.soma}
+                    <f:facet name="header">Valores Gastos</f:facet>
+                        #{o.valor}
                 </h:column>
             </h:dataTable>
 

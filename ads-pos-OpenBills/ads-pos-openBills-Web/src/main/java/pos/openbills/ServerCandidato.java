@@ -28,6 +28,20 @@ public interface ServerCandidato {
      * 
      * @param ano
      * @return
+     *     returns java.util.List<pos.openbills.QuantidadeDespesaCandidato>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "quantidadeCandidato", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.QuantidadeCandidato")
+    @ResponseWrapper(localName = "quantidadeCandidatoResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.QuantidadeCandidatoResponse")
+    public List<QuantidadeDespesaCandidato> quantidadeCandidato(
+        @WebParam(name = "ano", targetNamespace = "")
+        int ano);
+
+    /**
+     * 
+     * @param ano
+     * @return
      *     returns java.util.List<pos.openbills.QuantidadeDespesaCandidatoSoma>
      */
     @WebMethod
@@ -42,13 +56,13 @@ public interface ServerCandidato {
      * 
      * @param ano
      * @return
-     *     returns java.util.List<pos.openbills.QuantidadeDespesaCandidato>
+     *     returns java.util.List<pos.openbills.QuantidadeDespesaCandidatoSoma>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "quantidadeCandidato", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.QuantidadeCandidato")
-    @ResponseWrapper(localName = "quantidadeCandidatoResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.QuantidadeCandidatoResponse")
-    public List<QuantidadeDespesaCandidato> quantidadeCandidato(
+    @RequestWrapper(localName = "maisGastaram", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.MaisGastaram")
+    @ResponseWrapper(localName = "maisGastaramResponse", targetNamespace = "http://server.SOAP.openBill.pos.ads/", className = "pos.openbills.MaisGastaramResponse")
+    public List<QuantidadeDespesaCandidatoSoma> maisGastaram(
         @WebParam(name = "ano", targetNamespace = "")
         int ano);
 

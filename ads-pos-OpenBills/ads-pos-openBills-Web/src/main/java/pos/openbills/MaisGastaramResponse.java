@@ -10,16 +10,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de mediaDespesasDoEstadoResponse complex type.
+ * <p>Classe Java de maisGastaramResponse complex type.
  * 
  * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
- * &lt;complexType name="mediaDespesasDoEstadoResponse">
+ * &lt;complexType name="maisGastaramResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{http://server.SOAP.openBill.pos.ads/}mediaEstado" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="return" type="{http://server.SOAP.openBill.pos.ads/}quantidadeDespesaCandidatoSoma" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,13 +29,13 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "mediaDespesasDoEstadoResponse", propOrder = {
+@XmlType(name = "maisGastaramResponse", propOrder = {
     "_return"
 })
-public class MediaDespesasDoEstadoResponse {
+public class MaisGastaramResponse {
 
-    @XmlElement(name = "return", nillable = true)
-    protected List<MediaEstado> _return;
+    @XmlElement(name = "return")
+    protected List<QuantidadeDespesaCandidatoSoma> _return;
 
     /**
      * Gets the value of the return property.
@@ -55,13 +55,13 @@ public class MediaDespesasDoEstadoResponse {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link MediaEstado }
+     * {@link QuantidadeDespesaCandidatoSoma }
      * 
      * 
      */
-    public List<MediaEstado> getReturn() {
+    public List<QuantidadeDespesaCandidatoSoma> getReturn() {
         if (_return == null) {
-            _return = new ArrayList<MediaEstado>();
+            _return = new ArrayList<QuantidadeDespesaCandidatoSoma>();
         }
         return this._return;
     }

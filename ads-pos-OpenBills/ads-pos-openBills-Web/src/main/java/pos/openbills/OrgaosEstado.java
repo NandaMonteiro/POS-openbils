@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for orgaosEstado complex type.
+ * <p>Classe Java de orgaosEstado complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType name="orgaosEstado">
@@ -34,7 +34,7 @@ public class OrgaosEstado {
     protected int ano;
 
     /**
-     * Gets the value of the ano property.
+     * Obtém o valor da propriedade ano.
      * 
      */
     public int getAno() {
@@ -42,7 +42,7 @@ public class OrgaosEstado {
     }
 
     /**
-     * Sets the value of the ano property.
+     * Define o valor da propriedade ano.
      * 
      */
     public void setAno(int value) {

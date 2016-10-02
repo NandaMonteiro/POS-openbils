@@ -25,14 +25,14 @@ import pos.openbills.ServerCandidatoService;
 @Named
 @SessionScoped
 public class ServiceCandidatoMaisGastaram implements Serializable{
-    private int ano = 2004;
+    private int ano = 2002;
     private List<QuantidadeDespesaCandidatoSoma> listaCandidatoMaisGastaram;
     private JsonArray arrayCandidatoMaisGastaram;
     
     private List<QuantidadeDespesaCandidatoSoma> listCandidatoMaisGastaram(){
          ServerCandidatoService serverCandidatiService  = new ServerCandidatoService();
          ServerCandidato sc = serverCandidatiService.getServerCandidatoPort();
-         return sc.despesas(this.ano);
+         return sc.maisGastaram(this.ano);
     }
     
     private JsonArray getJsonList() {
