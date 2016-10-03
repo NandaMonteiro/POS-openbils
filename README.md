@@ -9,3 +9,8 @@ Gerenciamento de versão do código: https://github.com/NandaMonteiro/POS-openbi
 Gerenciamento de atividades do projeto: https://waffle.io/NandaMonteiro/POS-openbils; 
 Documentação e uso da ferramenta desenvolvida: https://prisgouveia.gitbooks.io/projeto-1-open-bills/content/; 
 Gráficos e Análise dos dados: http://www.highcharts.com
+
+Equipe: Fernanda Alves
+        Luciana Gadelha
+        Marcolina Izabel
+        Priscila Gouveia
